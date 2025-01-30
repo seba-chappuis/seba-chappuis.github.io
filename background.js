@@ -13,6 +13,14 @@
     const MARGIN = 0.25 * ORB_SIZE;
     const MARGIN_DOUBLE = 2 * MARGIN;
     
+    function clamp(val, min, max) {
+        return Math.min(Math.max(val, min), max);
+    }
+    
+    function remap(val, min_a, max_a, min_b, max_b) {
+        return min_b + (val - min_a) * (max_b - min_b) / (max_a - min_a);
+    }
+    
     function createShaderProgram(gl, vertexSource, fragmentSource) {
         const vertexShader = gl.createShader(gl.VERTEX_SHADER);
         const fragmentShader = gl.createShader(gl.FRAGMENT_SHADER);
@@ -214,19 +222,64 @@
     }
     
     const orbs = [];
-    let mouseX = -99999;
-    let mouseY = -99999;
+    let isTouchActive = false;
+    let mouseX = 0;
+    let mouseY = 0;
     let lastTime = 0;
+    let mouseDownTime = 256;
+    let touchEndTime = 256;
     
     resize();
     update();
     
-    window.addEventListener('mousemove', mouseMove);
+    window.addEventListener('mousedown', ev => {
+        if (touchEndTime === 0) return;
+        mouseDownTime = 0;
+        isTouchActive = true;
+        mouseMove(ev);
+    });
+    window.addEventListener('mousemove', ev => {
+        if (touchEndTime === 0) return;
+        isTouchActive = true;
+        mouseMove(ev);
+    });
+    window.addEventListener('touchstart', ev => {
+        mouseDownTime = 0;
+        isTouchActive = true;
+        mouseMove(ev);
+    });
+    window.addEventListener('touchmove', ev => {
+        isTouchActive = true;
+        mouseMove(ev);
+    });
+    window.addEventListener('touchend', ev => {
+        isTouchActive = false;
+        touchEndTime = 0;
+    });
     window.addEventListener('resize', resize);
     
     function mouseMove(ev) {
-        mouseX = ev.clientX / SCREEN_SIZE_MULT;
-        mouseY = ev.clientY / SCREEN_SIZE_MULT;
+        let posX = 0;
+        let posY = 0;
+        if (ev.touches) {
+            const touches = ev.touches;
+            if (touches.length === 0) {
+                isTouchActive = false;
+                return;
+            }
+            for (const touch of touches) {
+                posX += touch.clientX;
+                posY += touch.clientY;
+            }
+            posX /= touches.length;
+            posY /= touches.length;
+        }
+        else {
+            posX = ev.clientX;
+            posY = ev.clientY;
+        }
+        mouseX = posX / SCREEN_SIZE_MULT;
+        mouseY = posY / SCREEN_SIZE_MULT;
     }
     
     function resize() {
@@ -282,19 +335,26 @@
         const delta = (now - lastTime) / 1000;
         // Movement
         if (lastTime > 0) {
+            let divisor = remap(clamp(mouseDownTime, 0, 1.5), 0, 1.5, 12, 96);
+            let multiplier = 1;
+            if (!isTouchActive) {
+                multiplier = remap(touchEndTime, 0, 0.75, 1, 0);
+            }
             for (const orb of orbs) {
                 orb.x += orb.vx * delta;
                 orb.y += orb.vy * delta;
-                const diffX = (mouseX - orb.x) * SCREEN_SIZE_MULT;
-                const diffY = (mouseY - orb.y) * SCREEN_SIZE_MULT;
-                const dist2 = diffX * diffX + diffY * diffY;
-                if (dist2 < 256 * 256) {
-                    let dist = Math.sqrt(dist2);
-                    if (dist > 0.0001) {
-                        const speed = (256 - dist) / 64 / SCREEN_SIZE_MULT;
-                        const angle = Math.atan2(diffY, diffX);
-                        orb.x -= speed * Math.cos(angle);
-                        orb.y -= speed * Math.sin(angle);
+                if (isTouchActive || touchEndTime < 0.75) {
+                    const diffX = (mouseX - orb.x) * SCREEN_SIZE_MULT;
+                    const diffY = (mouseY - orb.y) * SCREEN_SIZE_MULT;
+                    const dist2 = diffX * diffX + diffY * diffY;
+                    if (dist2 < 256 * 256) {
+                        let dist = Math.sqrt(dist2);
+                        if (dist > 0.0001) {
+                            const speed = multiplier * (256 - dist) / (divisor * SCREEN_SIZE_MULT);
+                            const angle = Math.atan2(diffY, diffX);
+                            orb.x -= speed * Math.cos(angle);
+                            orb.y -= speed * Math.sin(angle);
+                        }
                     }
                 }
                 if (orb.x < -MARGIN) orb.x += frameBufferWidth + MARGIN_DOUBLE;
@@ -353,6 +413,8 @@
         
         gl.drawElements(gl.TRIANGLES, 6, gl.UNSIGNED_SHORT, 0);
         
+        mouseDownTime += delta;
+        touchEndTime += delta;
         lastTime = now;
     }
 })();

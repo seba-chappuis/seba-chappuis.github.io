@@ -12,9 +12,9 @@
     <header>
         <nav>
             <ul>
-                <li><a href="#presentation">Présentation</a></li>
-                <li><a href="#projects">Projets</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#presentation">{{section_presentation}}</a></li>
+                <li><a href="#projects">{{section_projects}}</a></li>
+                <li><a href="#contact">{{section_contact}}</a></li>
             </ul>
         </nav>
         <ul class="lang-switch">
@@ -25,75 +25,75 @@
     <main>
         <h1>Portfolio</h1>
         <section>
-            <h2 id="presentation"><span class="limit-width">Présentation</span></h2>
+            <h2 id="presentation"><span class="limit-width">{{section_presentation}}</span></h2>
             <div class="limit-width">
                 <p>Sébastien Chappuis</p>
                 <p>Ingénieur en développement logiciel</p>
             </div>
         </section>
         <section>
-            <h2 id="projects"><span class="limit-width">Projets</span></h2>
+            <h2 id="projects"><span class="limit-width">{{section_projects}}</span></h2>
             <article class="limit-width">
-                <h3>Labyrinth Path Solver</h3>
-                <p>TODO</p>
-                <p><strong>Technologies utilisées :</strong> HTML, CSS, JavaScript (canvas, contexte 2D)</p>
-                <p>Vous pouvez directement intéragir avec le générateur de labyrinthes ci-dessous :</p>
+                <h3>{{project_lps_title}}</h3>
+                <p>{{project_lps_description}}</p>
+                <p><strong>{{technologies_used}}</strong> {{project_lps_technologies}}</p>
+                <p>{{project_lps_see_below}}</p>
 <!-- LPS -->
 <div id="lps">
 <div id="lps-ui">
     <div class="lps-input-header lps-no-top-margin">
-        <label>Configuration de génération</label>
+        <label>{{lps_generation_configuration}}</label>
     </div>
     <div class="lps-input-row">
-        <label for="lps-input-radius">Rayon externe</label>
+        <label for="lps-input-radius">{{lps_outer_radius}}</label>
         <input id="lps-input-radius" type="range" value="20" min="5" max="50">
     </div>
     <div class="lps-input-row">
-        <label for="lps-input-inner-radius">Rayon interne</label>
+        <label for="lps-input-inner-radius">{{lps_inner_radius}}</label>
         <input id="lps-input-inner-radius" type="range" value="30" min="0" max="50">
     </div>
     <div class="lps-input-row">
-        <label for="lps-input-paths-density">Densité des chemins</label>
+        <label for="lps-input-paths-density">{{lps_paths_density}}</label>
         <input id="lps-input-paths-density" type="range" value="2" min="0" max="50">
     </div>
     <div class="lps-input-row">
-        <label>Distance parcourue</label>
+        <label>{{lps_traveled_distance}}</label>
         <label id="lps-path-length-traveled">0</label>
     </div>
     <div class="lps-input-row">
-        <label>Solution la plus courte</label>
+        <label>{{lps_shortest_solution}}</label>
         <label id="lps-shortest-resolve-distance">0</label>
     </div>
     
     <div class="lps-input-row">
-        <button id="lps-button-regenerate">Générer un autre avec la même configuration</button>
+        <button id="lps-button-regenerate">{{lps_button_regenerate}}</button>
     </div>
     
     <!-- Animation -->
     <div class="lps-input-header">
-        <label>Configuration de l'animation</label>
+        <label>{{lps_animation_configuration}}</label>
     </div>
     
     <div class="lps-input-row">
-        <label for="lps-input-show-solution">Afficher la solution</label>
+        <label for="lps-input-show-solution">{{lps_show_solution}}</label>
         <input id="lps-input-show-solution" type="checkbox">
     </div>
     
     <div class="lps-input-row">
-        <label for="lps-input-preview-type">Type de prévisualisation</label>
+        <label for="lps-input-preview-type">{{lps_preview_type}}</label>
         <select id="lps-input-preview-type">
-            <option value="show-progress">Afficher la progression</option>
-            <option value="instant">Instantanée</option>
+            <option value="show-progress">{{lps_preview_type_show_progress}}</option>
+            <option value="instant">{{lps_preview_type_instant}}</option>
         </select>
     </div>
     
     <div class="lps-input-row">
-        <label for="input-generation-speed">Vitesse de génération</label>
+        <label for="input-generation-speed">{{lps_generation_speed}}</label>
         <!-- max = JS const ANIMATION_SPEED lenght -->
         <input id="lps-input-generation-speed" type="range" value="7" min="0" max="8">
     </div>
     <div class="lps-input-row">
-        <label for="lps-input-resolve-speed">Vitesse de résolution</label>
+        <label for="lps-input-resolve-speed">{{lps_resolve_speed}}</label>
         <!-- max = JS const ANIMATION_SPEED lenght (removing the index 8 to exclude "instant resolve") -->
         <input id="lps-input-resolve-speed" type="range" value="6" min="0" max="7">
     </div>
@@ -103,16 +103,16 @@
     <a id="lps-link" class="lps-hidden"></a>
     
     <div class="lps-input-header">
-        <label>Export</label>
+        <label>{{lps_export}}</label>
     </div>
     <div class="lps-input-row">
-        <button id="lps-export-unresolved-png">Labyrinthe non-résolue en PNG</button>
+        <button id="lps-export-unresolved-png">{{lps_export_unresolved}}</button>
     </div>
     <div class="lps-input-row">
-        <button id="lps-export-resolved-png">Labyrinthe résolue en PNG</button>
+        <button id="lps-export-resolved-png">{{lps_export_resolved}}</button>
     </div>
     <div class="lps-input-row">
-        <button id="lps-export-unfinished-png">État actuel du labyrinthe en PNG</button>
+        <button id="lps-export-unfinished-png">{{lps_export_current_state}}</button>
     </div>
 </div>
 <div id="lps-canvas-wrapper">
@@ -130,9 +130,9 @@
                 <p>Description du projet 3...</p>
             </article>
             <article class="limit-width">
-                <h3>Grafile</h3>
-                <p>Grafile est un logiciel conçu pour automatiser certaines actions sur des fichiers, telles que les renommer, les déplacer, les supprimer, etc. L'interface graphique est sous la forme d'un système de nœuds pouvant être reliés entre eux.</p>
-                <p><strong>Technologies utilisées :</strong> C++, Qt</p>
+                <h3>{{project_gf_title}}</h3>
+                <p>{{project_gf_description}}</p>
+                <p><strong>{{technologies_used}}</strong> {{project_gf_technologies}}</p>
             </article>
             <article class="limit-width">
                 <h3>Projet 4</h3>
@@ -143,13 +143,13 @@
                 <p>Description du projet 5...</p>
             </article>
             <article class="limit-width">
-                <h3>Arrière plan du portfolio</h3>
-                <p>L'arrière plan de ce site est également une de mes créations exploitant différentes notions d'OpenGL/WebGL, telles que les vertex shaders, les fragment shaders, les textures, l'upscaling, le post-processing, etc.</p>
-                <p><strong>Technologies utilisées :</strong> HTML, CSS, JavaScript, WebGL</p>
+                <h3>{{project_background_title}}</h3>
+                <p>{{project_background_description}}</p>
+                <p><strong>{{technologies_used}}</strong> {{project_background_technologies}}</p>
             </article>
         </section>
         <section>
-            <h2 id="contact"><span class="limit-width">Contact</span></h2>
+            <h2 id="contact"><span class="limit-width">{{section_contact}}</span></h2>
             <p>Informations de contact...</p>
         </section>
     </main>

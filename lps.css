@@ -1,0 +1,77 @@
+#lps {
+    display: flex;
+    padding: 1rem;
+    background: rgba(0,0,0,.25);
+    backdrop-filter: blur(1.5rem);
+    font-size: 1rem;
+}
+
+#lps-ui {
+    min-width: 28rem;
+    padding: 1rem;
+}
+
+.lps-input-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 2rem 0 1rem;
+    text-decoration: underline;
+    font-size: 1.5rem;
+}
+
+.lps-input-row {
+    display: flex;
+    padding: .5rem;
+}
+
+.lps-input-row label {
+    flex: 1;
+}
+
+.lps-input-row input,
+.lps-input-row button,
+.lps-input-row select {
+    flex: 1;
+    width: 100%;
+    font: inherit;
+}
+
+#lps-canvas-wrapper {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+}
+
+#lps-canvas {
+    position: absolute;
+    image-rendering: pixelated;
+}
+
+.lps-hidden {
+    display: none;
+}
+
+.lps-no-top-margin {
+    margin-top: 0;
+}
+
+@media screen and (max-width: 720px) {
+    #lps {
+        flex-direction: column;
+    }
+    
+    #lps-ui {
+        min-width: initial;
+    }
+    
+    #lps-canvas-wrapper {
+        min-height: 24rem;
+    }
+    
+    #lps-canvas {
+        position: initial;
+    }
+}

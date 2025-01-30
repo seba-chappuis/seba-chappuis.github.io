@@ -12,8 +12,8 @@
     <header>
         <nav>
             <ul>
-                <li><a href="#presentation">Présentation</a></li>
-                <li><a href="#projects">Projets</a></li>
+                <li><a href="#presentation">Presentation</a></li>
+                <li><a href="#projects">Projects</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
@@ -25,75 +25,75 @@
     <main>
         <h1>Portfolio</h1>
         <section>
-            <h2 id="presentation"><span class="limit-width">Présentation</span></h2>
+            <h2 id="presentation"><span class="limit-width">Presentation</span></h2>
             <div class="limit-width">
                 <p>Sébastien Chappuis</p>
                 <p>Ingénieur en développement logiciel</p>
             </div>
         </section>
         <section>
-            <h2 id="projects"><span class="limit-width">Projets</span></h2>
+            <h2 id="projects"><span class="limit-width">Projects</span></h2>
             <article class="limit-width">
                 <h3>Labyrinth Path Solver</h3>
                 <p>TODO</p>
-                <p><strong>Technologies utilisées :</strong> HTML, CSS, JavaScript (canvas, contexte 2D)</p>
-                <p>Vous pouvez directement intéragir avec le générateur de labyrinthes ci-dessous :</p>
+                <p><strong>Technologies used:</strong> HTML, CSS, JavaScript (canvas, context 2D)</p>
+                <p>You can directly interact with the maze generator below:</p>
 <!-- LPS -->
 <div id="lps">
 <div id="lps-ui">
     <div class="lps-input-header lps-no-top-margin">
-        <label>Configuration de génération</label>
+        <label>Generation configuration</label>
     </div>
     <div class="lps-input-row">
-        <label for="lps-input-radius">Rayon externe</label>
+        <label for="lps-input-radius">Outer radius</label>
         <input id="lps-input-radius" type="range" value="20" min="5" max="50">
     </div>
     <div class="lps-input-row">
-        <label for="lps-input-inner-radius">Rayon interne</label>
+        <label for="lps-input-inner-radius">Inner radius</label>
         <input id="lps-input-inner-radius" type="range" value="30" min="0" max="50">
     </div>
     <div class="lps-input-row">
-        <label for="lps-input-paths-density">Densité des chemins</label>
+        <label for="lps-input-paths-density">Paths density</label>
         <input id="lps-input-paths-density" type="range" value="2" min="0" max="50">
     </div>
     <div class="lps-input-row">
-        <label>Distance parcourue</label>
+        <label>Traveled distance</label>
         <label id="lps-path-length-traveled">0</label>
     </div>
     <div class="lps-input-row">
-        <label>Solution la plus courte</label>
+        <label>Shortest solution</label>
         <label id="lps-shortest-resolve-distance">0</label>
     </div>
     
     <div class="lps-input-row">
-        <button id="lps-button-regenerate">Générer un autre avec la même configuration</button>
+        <button id="lps-button-regenerate">Generate another with same configuration</button>
     </div>
     
     <!-- Animation -->
     <div class="lps-input-header">
-        <label>Configuration de l'animation</label>
+        <label>Animation configuration</label>
     </div>
     
     <div class="lps-input-row">
-        <label for="lps-input-show-solution">Afficher la solution</label>
+        <label for="lps-input-show-solution">Show solution</label>
         <input id="lps-input-show-solution" type="checkbox">
     </div>
     
     <div class="lps-input-row">
-        <label for="lps-input-preview-type">Type de prévisualisation</label>
+        <label for="lps-input-preview-type">Preview type</label>
         <select id="lps-input-preview-type">
-            <option value="show-progress">Afficher la progression</option>
-            <option value="instant">Instantanée</option>
+            <option value="show-progress">Show progress</option>
+            <option value="instant">Instant</option>
         </select>
     </div>
     
     <div class="lps-input-row">
-        <label for="input-generation-speed">Vitesse de génération</label>
+        <label for="input-generation-speed">Generation speed</label>
         <!-- max = JS const ANIMATION_SPEED lenght -->
         <input id="lps-input-generation-speed" type="range" value="7" min="0" max="8">
     </div>
     <div class="lps-input-row">
-        <label for="lps-input-resolve-speed">Vitesse de résolution</label>
+        <label for="lps-input-resolve-speed">Resolve speed</label>
         <!-- max = JS const ANIMATION_SPEED lenght (removing the index 8 to exclude "instant resolve") -->
         <input id="lps-input-resolve-speed" type="range" value="6" min="0" max="7">
     </div>
@@ -106,13 +106,13 @@
         <label>Export</label>
     </div>
     <div class="lps-input-row">
-        <button id="lps-export-unresolved-png">Labyrinthe non-résolue en PNG</button>
+        <button id="lps-export-unresolved-png">Unresolved maze to PNG</button>
     </div>
     <div class="lps-input-row">
-        <button id="lps-export-resolved-png">Labyrinthe résolue en PNG</button>
+        <button id="lps-export-resolved-png">Resolved maze to PNG</button>
     </div>
     <div class="lps-input-row">
-        <button id="lps-export-unfinished-png">État actuel du labyrinthe en PNG</button>
+        <button id="lps-export-unfinished-png">Current state of the maze to PNG</button>
     </div>
 </div>
 <div id="lps-canvas-wrapper">
@@ -131,8 +131,8 @@
             </article>
             <article class="limit-width">
                 <h3>Grafile</h3>
-                <p>Grafile est un logiciel conçu pour automatiser certaines actions sur des fichiers, telles que les renommer, les déplacer, les supprimer, etc. L'interface graphique est sous la forme d'un système de nœuds pouvant être reliés entre eux.</p>
-                <p><strong>Technologies utilisées :</strong> C++, Qt</p>
+                <p>Grafile is a software conceived to automate certain actions on files, such as renaming, moving, deleting, etc. The interface is in the form of a node system that can be linked together.</p>
+                <p><strong>Technologies used:</strong> C++, Qt</p>
             </article>
             <article class="limit-width">
                 <h3>Projet 4</h3>
@@ -143,9 +143,9 @@
                 <p>Description du projet 5...</p>
             </article>
             <article class="limit-width">
-                <h3>Arrière plan du portfolio</h3>
-                <p>L'arrière plan de ce site est également une de mes créations exploitant différentes notions d'OpenGL/WebGL, telles que les vertex shaders, les fragment shaders, les textures, l'upscaling, le post-processing, etc.</p>
-                <p><strong>Technologies utilisées :</strong> HTML, CSS, JavaScript, WebGL</p>
+                <h3>Portfolio background</h3>
+                <p>The background of this site is also one of my creations using various OpenGL/WebGL concepts, such as vertex shaders, fragment shaders, textures, upscaling, post-processing, etc.</p>
+                <p><strong>Technologies used:</strong> HTML, CSS, JavaScript, WebGL</p>
             </article>
         </section>
         <section>
