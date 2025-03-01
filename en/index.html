@@ -12,9 +12,9 @@
     <header>
         <nav>
             <ul>
-                <li><a href="#presentation">Presentation</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a class="btn" href="#presentation">Presentation</a></li>
+                <li><a class="btn" href="#projects">Projects</a></li>
+                <li><a class="btn" href="#contact">Contact</a></li>
             </ul>
         </nav>
         <ul class="lang-switch">
@@ -25,17 +25,26 @@
     <main>
         <h1>Portfolio</h1>
         <section>
-            <h2 id="presentation"><span class="limit-width">Presentation</span></h2>
+            <h2 id="presentation" class="no-top-margin"><span class="limit-width">Presentation</span></h2>
             <div class="limit-width">
-                <p>Sébastien Chappuis</p>
-                <p>Ingénieur en développement logiciel</p>
+                <div class="presentation-wrapper">
+                    <div class="presentation-text">
+                        <p class="presentation-name">Sébastien Chappuis</p>
+                        <p class="presentation-role">Ingénieur en développement logiciel</p>
+                    </div>
+                    <div class="presentation-picture">
+                        <img src="https://placehold.co/400x400/gray/white?text=Me" alt="Sébastien Chappuis">
+                    </div>
+                </div>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
             </div>
         </section>
         <section>
             <h2 id="projects"><span class="limit-width">Projects</span></h2>
             <article class="limit-width">
                 <h3>Labyrinth Path Solver</h3>
-                <p>TODO</p>
+                <p>Labyrinth Path Solver is a project conceived during an algorithm and data structure course. This project allows you to visualize the generation and resolution of mazes, using an interactive graphical interface.</p>
                 <p><strong>Technologies used:</strong> HTML, CSS, JavaScript (canvas, context 2D)</p>
                 <p>You can directly interact with the maze generator below:</p>
 <!-- LPS -->
@@ -122,16 +131,45 @@
 <!-- LPS_END -->
             </article>
             <article class="limit-width">
-                <h3>Projet 2</h3>
-                <p>Description du projet 2...</p>
+                <h3>PixelARC</h3>
+                <div class="screenshot-row">
+                    <img src="https://placehold.co/600x400/orange/white?text=Image+1" alt="Image 1">
+                    <img src="https://placehold.co/600x400/skyblue/white?text=Image+2" alt="Image 2">
+                </div>
+                <p>PixelARC is a programming language conceived to allow the generation of images in the "pixel&nbsp;art" style.</p>
+                <p>The project is composed of two major parts:</p>
+                <ul class="list">
+                    <li>The compiler (converts the PixelARC code into bytecode)</li>
+                    <li>The interpreter (interprets the bytecode and generates the final image)</li>
+                </ul>
+                <p>The language implements some concepts such as variables, conditions, loops, functions, etc.<br>Native functions are also implemented, such as trigonometric functions and functions that allow you to draw on the final image.</p>
             </article>
             <article class="limit-width">
-                <h3>Projet 3</h3>
-                <p>Description du projet 3...</p>
+                <h3>Arquizz</h3>
+                <div class="screenshot-row">
+                    <img src="https://placehold.co/600x400/orange/white?text=Image+1" alt="Image 1">
+                    <img src="https://placehold.co/600x400/skyblue/white?text=Image+2" alt="Image 2">
+                </div>
+                <p>Arquizz is a website inspired by <i>Kahoot!</i> that allows you to create and play quizzes online in real-time against other users. The project implements the following features:</p>
+                <ul class="list">
+                    <li>User management (registration, login, profile)</li>
+                    <li>Quiz management (creation, modification, deletion)</li>
+                    <li>Question and answer management</li>
+                    <li>Public room system (game that can be joined by anyone using a code)</li>
+                    <li>Points and ranking system for a game</li>
+                    <li>Time system for a game (time limit per question)</li>
+                    <li>etc.</li>
+                </ul>
+                <p><strong>Technologies used:</strong> HTML, CSS, JavaScript, PHP, Laravel, MySQL</p>
             </article>
             <article class="limit-width">
                 <h3>Grafile</h3>
-                <p>Grafile is a software conceived to automate certain actions on files, such as renaming, moving, deleting, etc. The interface is in the form of a node system that can be linked together.</p>
+                <div class="screenshot-row">
+                    <img src="https://placehold.co/600x400/orange/white?text=Image+1" alt="Image 1">
+                    <img src="https://placehold.co/600x400/skyblue/white?text=Image+2" alt="Image 2">
+                    <img src="https://placehold.co/600x400/lime/white?text=Image+3" alt="Image 3">
+                </div>
+                <p>Grafile is a software conceived to automate some actions on files, such as renaming, moving, deleting, etc. The interface is in the form of a node system that can be linked together.</p>
                 <p><strong>Technologies used:</strong> C++, Qt</p>
             </article>
             <article class="limit-width">
@@ -146,11 +184,27 @@
                 <h3>Portfolio background</h3>
                 <p>The background of this site is also one of my creations using various OpenGL/WebGL concepts, such as vertex shaders, fragment shaders, textures, upscaling, post-processing, etc.</p>
                 <p><strong>Technologies used:</strong> HTML, CSS, JavaScript, WebGL</p>
+                <p>You can modify the background using the buttons below:</p>
+                <input id="background-theme" type="hidden" value="0">
+                <div id="background-themes" class="btn-list">
+                    <button class="btn selected">Default</button>
+                    <button class="btn">Honey</button>
+                    <button class="btn">Blueberry jam</button>
+                    <button class="btn">Lava</button>
+                    <button class="btn">Neon</button>
+                    <button class="btn">Rusty metal</button>
+                </div>
             </article>
         </section>
         <section>
             <h2 id="contact"><span class="limit-width">Contact</span></h2>
-            <p>Informations de contact...</p>
+            <article class="limit-width">
+                <p>You can contact me by email or on LinkedIn.</p>
+                <ul class="contact-list">
+                    <li><a id="contact-email" class="btn" href="#">Send me an email</a></li>
+                    <li><a class="btn" href="https://www.linkedin.com/in/sebastien-chappuis/">Find me on LinkedIn</a></li>
+                </ul>
+            </article>
         </section>
     </main>
     <footer>
@@ -158,5 +212,6 @@
     </footer>
     <script src="/background.js"></script>
     <script src="/lps.js"></script>
+    <script src="/email.js"></script>
 </body>
 </html>

@@ -3,10 +3,14 @@
     "section_presentation": "Présentation",
     "section_projects": "Projets",
     "section_contact": "Contact",
+    
+    "presentation_role": "Ingénieur en développement logiciel",
+    
     "project_lps_title": "Labyrinth Path Solver",
-    "project_lps_description": "TODO",
+    "project_lps_description": "Labyrinth Path Solver est un projet conçu lors d'un cours d'algorithme et de structure de données. Ce projet permet de visualiser la génération et la résolution de labyrinthes, le tout à l'aide d'une interface graphique interactive.",
     "project_lps_technologies": "HTML, CSS, JavaScript (canvas, contexte 2D)",
     "project_lps_see_below": "Vous pouvez directement intéragir avec le générateur de labyrinthes ci-dessous :",
+    
     "lps_generation_configuration": "Configuration de génération",
     "lps_inner_radius": "Rayon interne",
     "lps_outer_radius": "Rayon externe",
@@ -25,10 +29,43 @@
     "lps_export_unresolved": "Labyrinthe non-résolue en PNG",
     "lps_export_resolved": "Labyrinthe résolue en PNG",
     "lps_export_current_state": "État actuel du labyrinthe en PNG",
+    
     "project_gf_title": "Grafile",
     "project_gf_description": "Grafile est un logiciel conçu pour automatiser certaines actions sur des fichiers, telles que les renommer, les déplacer, les supprimer, etc. L'interface graphique est sous la forme d'un système de nœuds pouvant être reliés entre eux.",
     "project_gf_technologies": "C++, Qt",
+    
+    "project_pa_title": "PixelARC",
+    "project_pa_description1": "PixelARC est un langage de programmation conçu pour permettre la génération d'images dans le style \"pixel&nbsp;art\".",
+    "project_pa_description2": "Le projet est composé de deux grandes parties :",
+    "project_pa_part1": "Le compilateur (convertit le code PixelARC en bytecode)",
+    "project_pa_part2": "L'interpréteur (interprète le bytecode et génere l'image finale)",
+    "project_pa_description3": "Le langage implémente certains concepts tels que les variables, les conditions, les boucles, les fonctions, etc.<br>Des fonctions \"natives\" sont aussi implémentées, telles que des fonctions trigonométriques et des fonctions permettant de dessiner sur l'image final.",
+    "project_pa_technologies": "Python, Numpy, Pillow, Ply, PyDot",
+    
+    "project_aq_title": "Arquizz",
+    "project_aq_description": "Arquizz est un site web inspiré de <i>Kahoot!</i> permettant de créer et de jouer à des quiz en ligne en affrontant d'autres utilisateurs en temps réel. Le projet implémente les fonctionnalités suivantes :",
+    "project_aq_feat1": "Gestion d'utilisateurs (inscription, connexion, profil)",
+    "project_aq_feat2": "Gestion des quiz (création, modification, suppression)",
+    "project_aq_feat3": "Gestion des questions et des propositions",
+    "project_aq_feat4": "Système de salons (partie publique pouvant être rejointe par n'importe qui via un code)",
+    "project_aq_feat5": "Système de points et de classement pour une partie",
+    "project_aq_feat6": "Système de temporisation pour une partie (limite de temps par question)",
+    "project_aq_feat_etc": "etc.",
+    "project_aq_technologies": "HTML, CSS, JavaScript, PHP, Laravel, MySQL",
+    
     "project_background_title": "Arrière plan du portfolio",
     "project_background_description": "L'arrière plan de ce site est également une de mes créations exploitant différentes notions d'OpenGL/WebGL, telles que les vertex shaders, les fragment shaders, les textures, l'upscaling, le post-processing, etc.",
-    "project_background_technologies": "HTML, CSS, JavaScript, WebGL"
+    "project_background_technologies": "HTML, CSS, JavaScript, WebGL",
+    "project_background_see_below": "Vous pouvez modifier l'arrière-plan à l'aide des boutons ci-dessous :",
+    
+    "background_theme_default": "Par défaut",
+    "background_theme_honey": "Miel",
+    "background_theme_blueberry_jam": "Confiture aux myrtilles",
+    "background_theme_lava": "Lave",
+    "background_theme_neon": "Néon",
+    "background_theme_rusty_metal": "Métal rouillé",
+    
+    "contact_text": "Vous pouvez me contacter par e-mail ou sur LinkedIn.",
+    "contact_email_text": "M'envoyer un e-mail",
+    "contact_linkedin_text": "Me trouver sur LinkedIn"
 }

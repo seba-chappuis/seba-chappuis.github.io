@@ -12,6 +12,22 @@
     const ORB_SPEED_MULT = ORB_SPEED_MAX - ORB_SPEED_MIN;
     const MARGIN = 0.25 * ORB_SIZE;
     const MARGIN_DOUBLE = 2 * MARGIN;
+    const PATTERN_SIZES = [
+        [96 * 1.11538461538, 96],
+        [128, 128 * 1.1547005383792515],
+        [128, 128],
+        [192, 192],
+        [96, 96],
+        [96, 96],
+    ];
+    const PATTERN_BG_COLORS = [
+        '#002814',
+        '#601C00',
+        '#300020',
+        '#600800',
+        '#000060',
+        '#3C342C',
+    ];
     
     function clamp(val, min, max) {
         return Math.min(Math.max(val, min), max);
@@ -46,18 +62,33 @@
         return image;
     }
     
+    const inputTheme = document.getElementById('background-theme');
+    const buttonsTheme = Array.from(document.getElementById('background-themes').children);
+    for (const [index, button] of buttonsTheme.entries()) {
+        button.addEventListener('click', ev => {
+            updateTheme(index, button);
+        });
+    }
+    
     const canvas = document.createElement('canvas');
     canvas.classList.add('background');
     document.body.appendChild(canvas);
-    
     
     const gl = canvas.getContext('webgl');
     const ext = gl.getExtension('ANGLE_instanced_arrays');
     
     // Load texture from image
-    const orbImagePromise = loadImage('/img/orb.png');
-    const gaugeImagePromise = loadImage('/img/gauge.png');
-    const [orbImage, gaugeImage] = await Promise.all([orbImagePromise, gaugeImagePromise]);
+    const promises = [
+        '/img/orb.png',
+        '/img/gauge.png',
+        '/img/pattern-default.png',
+        '/img/pattern-honey.png',
+        '/img/pattern-blueberry-jam.png',
+        '/img/pattern-lava.png',
+        '/img/pattern-neon.png',
+        '/img/pattern-rusty-metal.png',
+    ].map(url => loadImage(url));
+    const [orbImage, gaugeImage, ...patternImages] = await Promise.all(promises);
     
     const orbTexture = gl.createTexture();
     gl.bindTexture(gl.TEXTURE_2D, orbTexture);
@@ -74,6 +105,17 @@
     gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR);
     gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE);
     gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE);
+    
+    const patternTextures = patternImages.map(image => {
+        const texture = gl.createTexture();
+        gl.bindTexture(gl.TEXTURE_2D, texture);
+        gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, image);
+        gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR);
+        gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR);
+        gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.REPEAT);
+        gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.REPEAT);
+        return texture;
+    });
     
     canvas.style.opacity = 1;
     
@@ -153,28 +195,37 @@
     
     const postProcessProgram = createShaderProgram(gl,
         /* VERTEX SHADER */ `
-            attribute vec2 vpos;
+            attribute vec2 vpos; // Vertex position
+            uniform vec2 size;
+            uniform vec2 pattern_size;
             varying vec2 uv;
+            varying vec2 coord;
             
             void main() {
                 uv = vpos + vec2(0.5);
+                coord = vpos * size / pattern_size + vec2(0.5);
                 gl_Position = vec4(2.0 * vpos, 0, 1);
             }
         `,
         /* FRAGMENT SHADER */ `
             precision mediump float;
             varying vec2 uv;
+            varying vec2 coord;
             uniform sampler2D tex;
             uniform sampler2D gauge;
+            uniform sampler2D pattern;
             uniform vec2 offset;
+            uniform float hue;
             
             void main() {
-                float w_a = texture2D(tex, uv - vec2(offset.x, 0.0)).r;
-                float w_b = texture2D(tex, uv + vec2(offset.x, 0.0)).r;
-                float w_c = texture2D(tex, uv - vec2(0.0, offset.y)).r;
-                float w_d = texture2D(tex, uv + vec2(0.0, offset.y)).r;
+                vec2 val = texture2D(pattern, coord).rg;
+                vec2 new_uv = uv - 4.0 * (val - 0.5) * offset;
+                float w_a = texture2D(tex, new_uv - vec2(offset.x, 0.0)).r;
+                float w_b = texture2D(tex, new_uv + vec2(offset.x, 0.0)).r;
+                float w_c = texture2D(tex, new_uv - vec2(0.0, offset.y)).r;
+                float w_d = texture2D(tex, new_uv + vec2(0.0, offset.y)).r;
                 float weight = 0.25 * (w_a + w_b + w_c + w_d);
-                gl_FragColor = vec4(texture2D(gauge, vec2(weight, 0.5)).rgb, 1.0);
+                gl_FragColor = vec4(texture2D(gauge, vec2(weight, hue)).rgb, 1.0);
             }
         `,
     );
@@ -194,7 +245,15 @@
         gl.uniform1i(gaugeLocation, 1);
     }
     
+    const patternLocation = gl.getUniformLocation(postProcessProgram, 'pattern');
+    gl.uniform1i(patternLocation, 2);
+    
+    gl.useProgram(orbProgram);
     const orbSizeLocation = gl.getUniformLocation(orbProgram, 'size');
+    gl.useProgram(postProcessProgram);
+    const screenSizeLocation = gl.getUniformLocation(postProcessProgram, 'size');
+    const patternSizeLocation = gl.getUniformLocation(postProcessProgram, 'pattern_size');
+    const hueLocation = gl.getUniformLocation(postProcessProgram, 'hue');
     
     // Create a frame buffer and a texture used to render the orbs,
     // then the result is drawn on the canvas with post-processing
@@ -228,7 +287,9 @@
     let lastTime = 0;
     let mouseDownTime = 256;
     let touchEndTime = 256;
+    let patternTexture = null;
     
+    updateTheme(parseInt(inputTheme.value));
     resize();
     update();
     
@@ -257,6 +318,24 @@
         touchEndTime = 0;
     });
     window.addEventListener('resize', resize);
+    
+    function updateTheme(index = 0) {
+        for (const [i, button] of buttonsTheme.entries()) {
+            if (i === index) {
+                button.classList.add('selected');
+            }
+            else {
+                button.classList.remove('selected');
+            }
+        }
+        const size = PATTERN_SIZES[index];
+        gl.useProgram(postProcessProgram);
+        gl.uniform2f(patternSizeLocation, size[0], size[1]);
+        gl.uniform1f(hueLocation, (index + 0.5) / 8);
+        patternTexture = patternTextures[index];
+        document.body.style.setProperty('background-color', PATTERN_BG_COLORS[index]);
+        inputTheme.value = index;
+    }
     
     function mouseMove(ev) {
         let posX = 0;
@@ -299,6 +378,8 @@
         canvas.height = innerHeight;
         gl.useProgram(orbProgram);
         gl.uniform2f(orbSizeLocation, ORB_SIZE / frameBufferWidth, ORB_SIZE / frameBufferHeight);
+        gl.useProgram(postProcessProgram);
+        gl.uniform2f(screenSizeLocation, innerWidth, innerHeight);
         // Calculate the number of orbs to display
         const area = (frameBufferWidth + MARGIN_DOUBLE) * (frameBufferHeight + MARGIN_DOUBLE);
         const orbsCount = Math.floor(area * DENSITY);
@@ -406,6 +487,8 @@
         gl.bindTexture(gl.TEXTURE_2D, frameBufferTexture);
         gl.activeTexture(gl.TEXTURE1);
         gl.bindTexture(gl.TEXTURE_2D, gaugeTexture);
+        gl.activeTexture(gl.TEXTURE2);
+        gl.bindTexture(gl.TEXTURE_2D, patternTexture);
         gl.viewport(0, 0, canvas.width, canvas.height);
         
         gl.clearColor(0, 0, 0, 1);

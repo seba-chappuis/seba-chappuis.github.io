@@ -12,9 +12,9 @@
     <header>
         <nav>
             <ul>
-                <li><a href="#presentation">{{section_presentation}}</a></li>
-                <li><a href="#projects">{{section_projects}}</a></li>
-                <li><a href="#contact">{{section_contact}}</a></li>
+                <li><a class="btn" href="#presentation">{{section_presentation}}</a></li>
+                <li><a class="btn" href="#projects">{{section_projects}}</a></li>
+                <li><a class="btn" href="#contact">{{section_contact}}</a></li>
             </ul>
         </nav>
         <ul class="lang-switch">
@@ -25,10 +25,19 @@
     <main>
         <h1>Portfolio</h1>
         <section>
-            <h2 id="presentation"><span class="limit-width">{{section_presentation}}</span></h2>
+            <h2 id="presentation" class="no-top-margin"><span class="limit-width">{{section_presentation}}</span></h2>
             <div class="limit-width">
-                <p>Sébastien Chappuis</p>
-                <p>Ingénieur en développement logiciel</p>
+                <div class="presentation-wrapper">
+                    <div class="presentation-text">
+                        <p class="presentation-name">Sébastien Chappuis</p>
+                        <p class="presentation-role">Ingénieur en développement logiciel</p>
+                    </div>
+                    <div class="presentation-picture">
+                        <img src="https://placehold.co/400x400/gray/white?text=Me" alt="Sébastien Chappuis">
+                    </div>
+                </div>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
             </div>
         </section>
         <section>
@@ -122,15 +131,44 @@
 <!-- LPS_END -->
             </article>
             <article class="limit-width">
-                <h3>Projet 2</h3>
-                <p>Description du projet 2...</p>
+                <h3>{{project_pa_title}}</h3>
+                <div class="screenshot-row">
+                    <img src="https://placehold.co/600x400/orange/white?text=Image+1" alt="Image 1">
+                    <img src="https://placehold.co/600x400/skyblue/white?text=Image+2" alt="Image 2">
+                </div>
+                <p>{{project_pa_description1}}</p>
+                <p>{{project_pa_description2}}</p>
+                <ul class="list">
+                    <li>{{project_pa_part1}}</li>
+                    <li>{{project_pa_part2}}</li>
+                </ul>
+                <p>{{project_pa_description3}}</p>
             </article>
             <article class="limit-width">
-                <h3>Projet 3</h3>
-                <p>Description du projet 3...</p>
+                <h3>{{project_aq_title}}</h3>
+                <div class="screenshot-row">
+                    <img src="https://placehold.co/600x400/orange/white?text=Image+1" alt="Image 1">
+                    <img src="https://placehold.co/600x400/skyblue/white?text=Image+2" alt="Image 2">
+                </div>
+                <p>{{project_aq_description}}</p>
+                <ul class="list">
+                    <li>{{project_aq_feat1}}</li>
+                    <li>{{project_aq_feat2}}</li>
+                    <li>{{project_aq_feat3}}</li>
+                    <li>{{project_aq_feat4}}</li>
+                    <li>{{project_aq_feat5}}</li>
+                    <li>{{project_aq_feat6}}</li>
+                    <li>{{project_aq_feat_etc}}</li>
+                </ul>
+                <p><strong>{{technologies_used}}</strong> {{project_aq_technologies}}</p>
             </article>
             <article class="limit-width">
                 <h3>{{project_gf_title}}</h3>
+                <div class="screenshot-row">
+                    <img src="https://placehold.co/600x400/orange/white?text=Image+1" alt="Image 1">
+                    <img src="https://placehold.co/600x400/skyblue/white?text=Image+2" alt="Image 2">
+                    <img src="https://placehold.co/600x400/lime/white?text=Image+3" alt="Image 3">
+                </div>
                 <p>{{project_gf_description}}</p>
                 <p><strong>{{technologies_used}}</strong> {{project_gf_technologies}}</p>
             </article>
@@ -146,11 +184,27 @@
                 <h3>{{project_background_title}}</h3>
                 <p>{{project_background_description}}</p>
                 <p><strong>{{technologies_used}}</strong> {{project_background_technologies}}</p>
+                <p>{{project_background_see_below}}</p>
+                <input id="background-theme" type="hidden" value="0">
+                <div id="background-themes" class="btn-list">
+                    <button class="btn selected">{{background_theme_default}}</button>
+                    <button class="btn">{{background_theme_honey}}</button>
+                    <button class="btn">{{background_theme_blueberry_jam}}</button>
+                    <button class="btn">{{background_theme_lava}}</button>
+                    <button class="btn">{{background_theme_neon}}</button>
+                    <button class="btn">{{background_theme_rusty_metal}}</button>
+                </div>
             </article>
         </section>
         <section>
             <h2 id="contact"><span class="limit-width">{{section_contact}}</span></h2>
-            <p>Informations de contact...</p>
+            <article class="limit-width">
+                <p>{{contact_text}}</p>
+                <ul class="contact-list">
+                    <li><a id="contact-email" class="btn" href="#">{{contact_email_text}}</a></li>
+                    <li><a class="btn" href="https://www.linkedin.com/in/sebastien-chappuis/">{{contact_linkedin_text}}</a></li>
+                </ul>
+            </article>
         </section>
     </main>
     <footer>
@@ -158,5 +212,6 @@
     </footer>
     <script src="/background.js"></script>
     <script src="/lps.js"></script>
+    <script src="/email.js"></script>
 </body>
 </html>
