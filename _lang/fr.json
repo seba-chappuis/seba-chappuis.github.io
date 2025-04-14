@@ -5,6 +5,7 @@
     "section_contact": "Contact",
     
     "presentation_role": "Ingénieur en développement logiciel",
+    "presentation_description": "J'aime tout ce qui est lié à la programmation, comme la création de sites web, de logiciels de bureau, de scripts d'automatisation, de jeux-vidéo, de logiciels pour systèmes embarqués, etc.",
     
     "project_lps_title": "Labyrinth Path Solver",
     "project_lps_description": "Labyrinth Path Solver est un projet conçu lors d'un cours d'algorithme et de structure de données. Ce projet permet de visualiser la génération et la résolution de labyrinthes, le tout à l'aide d'une interface graphique interactive.",
@@ -54,7 +55,7 @@
     "project_aq_technologies": "HTML, CSS, JavaScript, PHP, Laravel, MySQL",
     
     "project_background_title": "Arrière plan du portfolio",
-    "project_background_description": "L'arrière plan de ce site est également une de mes créations exploitant différentes notions d'OpenGL/WebGL, telles que les vertex shaders, les fragment shaders, les textures, l'upscaling, le post-processing, etc.",
+    "project_background_description": "L'arrière plan de ce site une de mes créations conçu spécialement pour ce portfolio. Différentes notions d'OpenGL/WebGL sont implémentées, telles que les vertex shaders, les fragment shaders, les textures, l'upscaling, le post-processing, etc.",
     "project_background_technologies": "HTML, CSS, JavaScript, WebGL",
     "project_background_see_below": "Vous pouvez modifier l'arrière-plan à l'aide des boutons ci-dessous :",
     
@@ -64,6 +65,9 @@
     "background_theme_lava": "Lave",
     "background_theme_neon": "Néon",
     "background_theme_rusty_metal": "Métal rouillé",
+    
+    "project_more_title": "... et bien plus !",
+    "project_more_description": "Durant mes études, j'ai conçu de nombreux autres projets, aussi bien individuellement que en groupe.<br>Seuls quelques projets clés sont déscrits sur ce portfolio.",
     
     "contact_text": "Vous pouvez me contacter par e-mail ou sur LinkedIn.",
     "contact_email_text": "M'envoyer un e-mail",

@@ -30,14 +30,13 @@
                 <div class="presentation-wrapper">
                     <div class="presentation-text">
                         <p class="presentation-name">Sébastien Chappuis</p>
-                        <p class="presentation-role">Ingénieur en développement logiciel</p>
+                        <p class="presentation-role">{{presentation_role}}</p>
                     </div>
                     <div class="presentation-picture">
-                        <img src="https://placehold.co/400x400/gray/white?text=Me" alt="Sébastien Chappuis">
+                        <img src="/img/me.jpg" alt="Sébastien Chappuis">
                     </div>
                 </div>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                <p>{{presentation_description}}</p>
             </div>
         </section>
         <section>
@@ -85,15 +84,19 @@
     
     <div class="lps-input-row">
         <label for="lps-input-show-solution">{{lps_show_solution}}</label>
-        <input id="lps-input-show-solution" type="checkbox">
+        <div class="lps-input-wrapper">
+            <input id="lps-input-show-solution" class="lps-checkbox" type="checkbox">
+        </div>
     </div>
     
     <div class="lps-input-row">
         <label for="lps-input-preview-type">{{lps_preview_type}}</label>
-        <select id="lps-input-preview-type">
-            <option value="show-progress">{{lps_preview_type_show_progress}}</option>
-            <option value="instant">{{lps_preview_type_instant}}</option>
-        </select>
+        <div class="lps-input-wrapper">
+            <select id="lps-input-preview-type">
+                <option value="show-progress">{{lps_preview_type_show_progress}}</option>
+                <option value="instant">{{lps_preview_type_instant}}</option>
+            </select>
+        </div>
     </div>
     
     <div class="lps-input-row">
@@ -132,10 +135,6 @@
             </article>
             <article class="limit-width">
                 <h3>{{project_pa_title}}</h3>
-                <div class="screenshot-row">
-                    <img src="https://placehold.co/600x400/orange/white?text=Image+1" alt="Image 1">
-                    <img src="https://placehold.co/600x400/skyblue/white?text=Image+2" alt="Image 2">
-                </div>
                 <p>{{project_pa_description1}}</p>
                 <p>{{project_pa_description2}}</p>
                 <ul class="list">
@@ -146,10 +145,6 @@
             </article>
             <article class="limit-width">
                 <h3>{{project_aq_title}}</h3>
-                <div class="screenshot-row">
-                    <img src="https://placehold.co/600x400/orange/white?text=Image+1" alt="Image 1">
-                    <img src="https://placehold.co/600x400/skyblue/white?text=Image+2" alt="Image 2">
-                </div>
                 <p>{{project_aq_description}}</p>
                 <ul class="list">
                     <li>{{project_aq_feat1}}</li>
@@ -164,21 +159,8 @@
             </article>
             <article class="limit-width">
                 <h3>{{project_gf_title}}</h3>
-                <div class="screenshot-row">
-                    <img src="https://placehold.co/600x400/orange/white?text=Image+1" alt="Image 1">
-                    <img src="https://placehold.co/600x400/skyblue/white?text=Image+2" alt="Image 2">
-                    <img src="https://placehold.co/600x400/lime/white?text=Image+3" alt="Image 3">
-                </div>
                 <p>{{project_gf_description}}</p>
                 <p><strong>{{technologies_used}}</strong> {{project_gf_technologies}}</p>
-            </article>
-            <article class="limit-width">
-                <h3>Projet 4</h3>
-                <p>Description du projet 4...</p>
-            </article>
-            <article class="limit-width">
-                <h3>Projet 5</h3>
-                <p>Description du projet 5...</p>
             </article>
             <article class="limit-width">
                 <h3>{{project_background_title}}</h3>
@@ -194,6 +176,10 @@
                     <button class="btn">{{background_theme_neon}}</button>
                     <button class="btn">{{background_theme_rusty_metal}}</button>
                 </div>
+            </article>
+            <article class="limit-width">
+                <h3>{{project_more_title}}</h3>
+                <p>{{project_more_description}}</p>
             </article>
         </section>
         <section>

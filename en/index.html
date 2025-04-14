@@ -30,14 +30,13 @@
                 <div class="presentation-wrapper">
                     <div class="presentation-text">
                         <p class="presentation-name">Sébastien Chappuis</p>
-                        <p class="presentation-role">Ingénieur en développement logiciel</p>
+                        <p class="presentation-role">Software Engineer</p>
                     </div>
                     <div class="presentation-picture">
-                        <img src="https://placehold.co/400x400/gray/white?text=Me" alt="Sébastien Chappuis">
+                        <img src="/img/me.jpg" alt="Sébastien Chappuis">
                     </div>
                 </div>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                <p>I like everything that is linked to programming, such as the creation of websites, desktop software, automation scripts, video games, embedded systems software, etc.</p>
             </div>
         </section>
         <section>
@@ -85,15 +84,19 @@
     
     <div class="lps-input-row">
         <label for="lps-input-show-solution">Show solution</label>
-        <input id="lps-input-show-solution" type="checkbox">
+        <div class="lps-input-wrapper">
+            <input id="lps-input-show-solution" class="lps-checkbox" type="checkbox">
+        </div>
     </div>
     
     <div class="lps-input-row">
         <label for="lps-input-preview-type">Preview type</label>
-        <select id="lps-input-preview-type">
-            <option value="show-progress">Show progress</option>
-            <option value="instant">Instant</option>
-        </select>
+        <div class="lps-input-wrapper">
+            <select id="lps-input-preview-type">
+                <option value="show-progress">Show progress</option>
+                <option value="instant">Instant</option>
+            </select>
+        </div>
     </div>
     
     <div class="lps-input-row">
@@ -132,10 +135,6 @@
             </article>
             <article class="limit-width">
                 <h3>PixelARC</h3>
-                <div class="screenshot-row">
-                    <img src="https://placehold.co/600x400/orange/white?text=Image+1" alt="Image 1">
-                    <img src="https://placehold.co/600x400/skyblue/white?text=Image+2" alt="Image 2">
-                </div>
                 <p>PixelARC is a programming language conceived to allow the generation of images in the "pixel&nbsp;art" style.</p>
                 <p>The project is composed of two major parts:</p>
                 <ul class="list">
@@ -146,10 +145,6 @@
             </article>
             <article class="limit-width">
                 <h3>Arquizz</h3>
-                <div class="screenshot-row">
-                    <img src="https://placehold.co/600x400/orange/white?text=Image+1" alt="Image 1">
-                    <img src="https://placehold.co/600x400/skyblue/white?text=Image+2" alt="Image 2">
-                </div>
                 <p>Arquizz is a website inspired by <i>Kahoot!</i> that allows you to create and play quizzes online in real-time against other users. The project implements the following features:</p>
                 <ul class="list">
                     <li>User management (registration, login, profile)</li>
@@ -164,25 +159,12 @@
             </article>
             <article class="limit-width">
                 <h3>Grafile</h3>
-                <div class="screenshot-row">
-                    <img src="https://placehold.co/600x400/orange/white?text=Image+1" alt="Image 1">
-                    <img src="https://placehold.co/600x400/skyblue/white?text=Image+2" alt="Image 2">
-                    <img src="https://placehold.co/600x400/lime/white?text=Image+3" alt="Image 3">
-                </div>
                 <p>Grafile is a software conceived to automate some actions on files, such as renaming, moving, deleting, etc. The interface is in the form of a node system that can be linked together.</p>
                 <p><strong>Technologies used:</strong> C++, Qt</p>
             </article>
             <article class="limit-width">
-                <h3>Projet 4</h3>
-                <p>Description du projet 4...</p>
-            </article>
-            <article class="limit-width">
-                <h3>Projet 5</h3>
-                <p>Description du projet 5...</p>
-            </article>
-            <article class="limit-width">
                 <h3>Portfolio background</h3>
-                <p>The background of this site is also one of my creations using various OpenGL/WebGL concepts, such as vertex shaders, fragment shaders, textures, upscaling, post-processing, etc.</p>
+                <p>The background of this site is one of my creations specifically designed for this portfolio. Different notions of OpenGL/WebGL are implemented, such as vertex shaders, fragment shaders, textures, upscaling, post-processing, etc.</p>
                 <p><strong>Technologies used:</strong> HTML, CSS, JavaScript, WebGL</p>
                 <p>You can modify the background using the buttons below:</p>
                 <input id="background-theme" type="hidden" value="0">
@@ -194,6 +176,10 @@
                     <button class="btn">Neon</button>
                     <button class="btn">Rusty metal</button>
                 </div>
+            </article>
+            <article class="limit-width">
+                <h3>... and much more!</h3>
+                <p>During my studies, I designed many other projects, both individually and in groups.<br>Only a few key projects are described on this portfolio.</p>
             </article>
         </section>
         <section>

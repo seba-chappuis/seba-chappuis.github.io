@@ -5,6 +5,7 @@
     "section_contact": "Contact",
     
     "presentation_role": "Software Engineer",
+    "presentation_description": "I like everything that is linked to programming, such as the creation of websites, desktop software, automation scripts, video games, embedded systems software, etc.",
     
     "project_lps_title": "Labyrinth Path Solver",
     "project_lps_description": "Labyrinth Path Solver is a project conceived during an algorithm and data structure course. This project allows you to visualize the generation and resolution of mazes, using an interactive graphical interface.",
@@ -54,7 +55,7 @@
     "project_aq_technologies": "HTML, CSS, JavaScript, PHP, Laravel, MySQL",
     
     "project_background_title": "Portfolio background",
-    "project_background_description": "The background of this site is also one of my creations using various OpenGL/WebGL concepts, such as vertex shaders, fragment shaders, textures, upscaling, post-processing, etc.",
+    "project_background_description": "The background of this site is one of my creations specifically designed for this portfolio. Different notions of OpenGL/WebGL are implemented, such as vertex shaders, fragment shaders, textures, upscaling, post-processing, etc.",
     "project_background_technologies": "HTML, CSS, JavaScript, WebGL",
     "project_background_see_below": "You can modify the background using the buttons below:",
     
@@ -64,6 +65,9 @@
     "background_theme_lava": "Lava",
     "background_theme_neon": "Neon",
     "background_theme_rusty_metal": "Rusty metal",
+    
+    "project_more_title": "... and much more!",
+    "project_more_description": "During my studies, I designed many other projects, both individually and in groups.<br>Only a few key projects are described on this portfolio.",
     
     "contact_text": "You can contact me by email or on LinkedIn.",
     "contact_email_text": "Send me an email",

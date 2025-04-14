@@ -148,6 +148,7 @@ main {
 
 .presentation-picture img {
     max-width: 14rem;
+    border-radius: 50%;
 }
 
 

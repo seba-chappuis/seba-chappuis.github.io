@@ -13,7 +13,7 @@
     const MARGIN = 0.25 * ORB_SIZE;
     const MARGIN_DOUBLE = 2 * MARGIN;
     const PATTERN_SIZES = [
-        [96 * 1.11538461538, 96],
+        [128, 128],
         [128, 128 * 1.1547005383792515],
         [128, 128],
         [192, 192],
