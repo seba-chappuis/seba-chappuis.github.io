@@ -264,11 +264,17 @@ h3::after {
 .screenshot-row {
     display: flex;
     justify-content: space-between;
-    gap: 2rem;
+    gap: 1rem;
     margin: 2rem 0;
 }
-.screenshot-row img {
+.screenshot-row .screenshot {
+    display: flex;
+    align-items: center;
     width: 100%;
+}
+.screenshot-row .screenshot img {
+    width: 100%;
+    box-shadow: 0 0 .5rem var(--col-bg50);
 }
 
 .contact-list {

@@ -134,6 +134,33 @@
 <!-- LPS_END -->
             </article>
             <article class="limit-width">
+                <h3>Projet de Bachelor</h3>
+                <p>Le projet de bachelor, réalisé individuellement, consiste en deux parties distinctes :</p>
+                <ul class="list">
+                    <li>Utilitaire permettant la génération de labyrinthes</li>
+                    <li>Jeu en 3D permettant de parcourir des labyrinthes generés</li>
+                </ul>
+                <p>L'utilitaire, inspiré du projet <em>Labyrinth Path Solver</em> décrit ci-dessus, permet de générer et de visualiser des labyrinthes composés de zones isolées appelées <em>clusters</em> (chaque cluster est représenté par une couleur distincte).</p>
+                <p>Les clusters sont ensuite reliés entre eux par des téléporteurs de manière à ce que chaque cluster soit accessible (chaque paire de téléporteurs est représentée par une lettre).</p>
+                <p>Un labyrinthe est composé de multiples salles, chaque salle ayant une difficulté qui y est associée (représenté par un nombre de 0 à 100), plus la salle est proche de l'arrivée, plus sa difficulté est élevée.</p>
+                <p>Les labyrinthes générés peuvent être enregistrés en tant que fichiers JSON. Un algorithme permet de déterminer le niveau de difficulté global d'un labyrinthe.</p>
+                <div class="screenshot-row">
+                    <div class="screenshot"><img alt="Screenshot 1" src="/img/bachelor-util1.png"></div>
+                    <div class="screenshot"><img alt="Screenshot 2" src="/img/bachelor-util2.png"></div>
+                    <div class="screenshot"><img alt="Screenshot 3" src="/img/bachelor-util3.png"></div>
+                </div>
+                <p>Le jeu en 3D permet de parcourir une succession de labyrinthes de difficulté croissante.</p>
+                <p>De multiples salles composées d'obstacles doivent être parcourues, les obstacles variant en fonction de la difficulté de la salle.</p>
+                <p>Le joueur peut en tout temps voir la carte du labyrinthe, permettant de connaitre sa localisation actuelles et l'emplacement des téléporteurs. Cependant, le joueur ne sait pas où mènent les téléporteurs. Il doit donc identifier la difficulté de la salle pour savoir s'il se rapproche ou s'éloigne de l'arrivée.</p>
+                <p>Le joueur dispose de trois points de vie. S'il tombe dans le vide, il perd une vie et réapparait à l'entrée de la salle actuelle. S'il perd tous ses points de vie, c'est game over ; le nombre de labyrinthes parcourus représente le score du joueur.</p>
+                <div class="screenshot-row">
+                    <div class="screenshot"><img alt="Screenshot 4" src="/img/bachelor-game1.png"></div>
+                    <div class="screenshot"><img alt="Screenshot 5" src="/img/bachelor-game2.png"></div>
+                </div>
+                <p><strong>Technologies utilisées pour l'utilitaire :</strong> Python, Tkinter (interface graphique), JSON</p>
+                <p><strong>Technologies utilisées pour le jeu en 3D :</strong> Godot (moteur de jeu), Blender (modélisation 3D), JSON</p>
+            </article>
+            <article class="limit-width">
                 <h3>PixelARC</h3>
                 <p>PixelARC est un langage de programmation conçu pour permettre la génération d'images dans le style "pixel&nbsp;art".</p>
                 <p>Le projet est composé de deux grandes parties :</p>
@@ -142,6 +169,7 @@
                     <li>L'interpréteur (interprète le bytecode et génere l'image finale)</li>
                 </ul>
                 <p>Le langage implémente certains concepts tels que les variables, les conditions, les boucles, les fonctions, etc.<br>Des fonctions "natives" sont aussi implémentées, telles que des fonctions trigonométriques et des fonctions permettant de dessiner sur l'image final.</p>
+                <p><strong>Technologies utilisées :</strong> Python, Numpy, Pillow, Ply, PyDot</p>
             </article>
             <article class="limit-width">
                 <h3>Arquizz</h3>

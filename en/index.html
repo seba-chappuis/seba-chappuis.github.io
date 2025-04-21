@@ -134,6 +134,33 @@
 <!-- LPS_END -->
             </article>
             <article class="limit-width">
+                <h3>Bachelor project</h3>
+                <p>The bachelor's project, completed individually, consists of two distinct parts:</p>
+                <ul class="list">
+                    <li>Utility for generating mazes</li>
+                    <li>3D game for navigating generated mazes</li>
+                </ul>
+                <p>The utility, inspired by the <em>Labyrinth Path Solver</em> project described above, allows you to generate and visualize mazes composed of isolated areas called <em>clusters</em> (each cluster is represented by a distinct color).</p>
+                <p>The clusters are then connected by teleporters so that each cluster is accessible (each pair of teleporters is represented by a letter).</p>
+                <p>A maze is composed of multiple rooms, each with an associated difficulty (represented by a number from 0 to 100). The closer the room is to the finish line, the higher its difficulty.</p>
+                <p>The generated mazes can be saved as JSON files. An algorithm is used to determine the global difficulty level of a maze.</p>
+                <div class="screenshot-row">
+                    <div class="screenshot"><img alt="Screenshot 1" src="/img/bachelor-util1.png"></div>
+                    <div class="screenshot"><img alt="Screenshot 2" src="/img/bachelor-util2.png"></div>
+                    <div class="screenshot"><img alt="Screenshot 3" src="/img/bachelor-util3.png"></div>
+                </div>
+                <p>The 3D game allows players to explore a series of mazes of increasing difficulty.</p>
+                <p>Multiple rooms composed of obstacles must be navigated, the obstacles varying depending on the room's difficulty.</p>
+                <p>The player can view the maze map at any time, showing their current location and the position of the teleporters. However, the player does not know where the teleporters lead. They must therefore identify the room's difficulty to determine whether they are getting closer or further from the destination.</p>
+                <p>The player has three health points. If they fall into the void, they lose a life and reappear at the entrance to the current room. If they lose all their health points, it's game over; the number of mazes completed represents the player's score.</p>
+                <div class="screenshot-row">
+                    <div class="screenshot"><img alt="Screenshot 4" src="/img/bachelor-game1.png"></div>
+                    <div class="screenshot"><img alt="Screenshot 5" src="/img/bachelor-game2.png"></div>
+                </div>
+                <p><strong>Technologies used for the utility:</strong> Python, Tkinter (graphical interface), JSON</p>
+                <p><strong>Technologies used for the 3D game:</strong> Godot (game engine), Blender (3D modeling), JSON</p>
+            </article>
+            <article class="limit-width">
                 <h3>PixelARC</h3>
                 <p>PixelARC is a programming language conceived to allow the generation of images in the "pixel&nbsp;art" style.</p>
                 <p>The project is composed of two major parts:</p>
@@ -142,6 +169,7 @@
                     <li>The interpreter (interprets the bytecode and generates the final image)</li>
                 </ul>
                 <p>The language implements some concepts such as variables, conditions, loops, functions, etc.<br>Native functions are also implemented, such as trigonometric functions and functions that allow you to draw on the final image.</p>
+                <p><strong>Technologies used:</strong> Python, Numpy, Pillow, Ply, PyDot</p>
             </article>
             <article class="limit-width">
                 <h3>Arquizz</h3>
