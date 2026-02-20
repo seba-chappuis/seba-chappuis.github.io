@@ -177,7 +177,7 @@
         showSolutionAnimationIfNeeded();
     });
 
-    inputPreviewType.addEventListener('input', ev => {
+    inputPreviewType.addEventListener('change', ev => {
         isAsyncMode = (inputPreviewType.value === 'show-progress');
     });
 
