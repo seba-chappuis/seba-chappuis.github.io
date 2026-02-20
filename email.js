@@ -1,7 +1,7 @@
 (function () {
     'use strict';
     
-    // Email is obfuscated to prevent botd detection and spam
+    // Email is obfuscated to prevent bots to scrape it from here
     const emailSecret = [
         893, 888, 835, 897, 894, 886, 898, 905,
         900, 893, 853, 904, 894, 906, 901, 901,
