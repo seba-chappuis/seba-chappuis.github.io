@@ -129,7 +129,7 @@
     let showSolution = false;
 
     // - For export
-    let mazeId = 1;
+    let mazeId = 0;
 
     // HTML elements
 

@@ -74,7 +74,7 @@
     </div>
     
     <div class="lps-input-row">
-        <button id="lps-button-regenerate">{{lps_button_regenerate}}</button>
+        <button id="lps-button-regenerate" class="btn lps-btn">{{lps_button_regenerate}}</button>
     </div>
     
     <!-- Animation -->
@@ -92,9 +92,9 @@
     <div class="lps-input-row">
         <label for="lps-input-preview-type">{{lps_preview_type}}</label>
         <div class="lps-input-wrapper">
-            <select id="lps-input-preview-type">
-                <option value="show-progress">{{lps_preview_type_show_progress}}</option>
-                <option value="instant">{{lps_preview_type_instant}}</option>
+            <select id="lps-input-preview-type" class="btn lps-btn lps-select">
+                <option class="lps-option" value="show-progress">{{lps_preview_type_show_progress}}</option>
+                <option class="lps-option" value="instant">{{lps_preview_type_instant}}</option>
             </select>
         </div>
     </div>
@@ -118,13 +118,13 @@
         <label>{{lps_export}}</label>
     </div>
     <div class="lps-input-row">
-        <button id="lps-export-unresolved-png">{{lps_export_unresolved}}</button>
+        <button id="lps-export-unresolved-png" class="btn lps-btn">{{lps_export_unresolved}}</button>
     </div>
     <div class="lps-input-row">
-        <button id="lps-export-resolved-png">{{lps_export_resolved}}</button>
+        <button id="lps-export-resolved-png" class="btn lps-btn">{{lps_export_resolved}}</button>
     </div>
     <div class="lps-input-row">
-        <button id="lps-export-unfinished-png">{{lps_export_current_state}}</button>
+        <button id="lps-export-unfinished-png" class="btn lps-btn">{{lps_export_current_state}}</button>
     </div>
 </div>
 <div id="lps-canvas-wrapper">
