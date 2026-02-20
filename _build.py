@@ -1,4 +1,5 @@
 import json
+from datetime import datetime
 
 def main():
     # Load "_lang/en.json" and convert to dict
@@ -21,6 +22,11 @@ def main():
         page_en = page_en.replace("{{" + key + "}}", lang_en[key])
     for key in lang_fr:
         page_fr = page_fr.replace("{{" + key + "}}", lang_fr[key])
+    
+    current_year = str(datetime.now().year)
+    
+    page_en = page_en.replace("{#CURRENT_YEAR#}", current_year)
+    page_fr = page_fr.replace("{#CURRENT_YEAR#}", current_year)
     
     # Save pages as HTML files
     with open("index.html", "w") as f:

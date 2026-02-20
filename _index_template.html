@@ -215,14 +215,22 @@
             <article class="limit-width">
                 <p>{{contact_text}}</p>
                 <ul class="contact-list">
-                    <li><a id="contact-email" class="btn" href="#">{{contact_email_text}}</a></li>
-                    <li><a class="btn" href="https://www.linkedin.com/in/sebastien-chappuis/">{{contact_linkedin_text}}</a></li>
+                    <li>
+                        <a id="contact-email" class="btn" href="#">
+                            <span class="icon-prefix i-email">{{contact_email_text}}</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="btn" href="https://www.linkedin.com/in/sebastien-chappuis/">
+                            <span class="icon-prefix i-linkedin">{{contact_linkedin_text}}</span>
+                        </a>
+                    </li>
                 </ul>
             </article>
         </section>
     </main>
     <footer>
-        <p>&copy; 2025&ensp;&ndash;&ensp;Sébastien Chappuis</p>
+        <p>&copy; {#CURRENT_YEAR#}&ensp;&ndash;&ensp;Sébastien Chappuis</p>
     </footer>
     <script src="/background.js"></script>
     <script src="/lps.js"></script>

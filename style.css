@@ -255,6 +255,24 @@ h3::after {
     flex: 35%;
 }
 
+.icon-prefix {
+    --size: 1.5em;
+    position: relative;
+    display: inline-block;
+    padding-left: calc(var(--size) + .5em);
+}
+
+.icon-prefix::before {
+    content: '';
+    position: absolute;
+    display: block;
+    left: 0;
+    top: calc(50% - 0.5*var(--size));
+    width: var(--size);
+    height: var(--size);
+    background: no-repeat center/contain;
+}
+
 .limit-width {
     max-width: 64rem;
     margin: 0 auto;
@@ -294,6 +312,16 @@ h3::after {
 
 .no-bottom-margin {
     margin-bottom: 0 !important;
+}
+
+/* ---- Icons ---- */
+
+.i-email::before {
+    background-image: url(/img/icons/email.png);
+}
+
+.i-linkedin::before {
+    background-image: url(/img/icons/linkedin.png);
 }
 
 
