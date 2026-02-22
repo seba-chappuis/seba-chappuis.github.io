@@ -19,9 +19,13 @@ def main():
     
     # Replace "{{key}}" with the corresponding value
     for key in lang_en:
-        page_en = page_en.replace("{{" + key + "}}", lang_en[key])
+        text = lang_en[key]
+        text = text.replace("~~", "&nbsp;")
+        page_en = page_en.replace("{{" + key + "}}", text)
     for key in lang_fr:
-        page_fr = page_fr.replace("{{" + key + "}}", lang_fr[key])
+        text = lang_fr[key]
+        text = text.replace("~~", "&nbsp;")
+        page_fr = page_fr.replace("{{" + key + "}}", text)
     
     current_year = str(datetime.now().year)
     
