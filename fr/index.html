@@ -30,7 +30,7 @@
                 <div class="presentation-wrapper">
                     <div class="presentation-text">
                         <p class="presentation-name">Sébastien Chappuis</p>
-                        <p class="presentation-role">Ingénieur en développement logiciel</p>
+                        <p class="presentation-role">Ingénieur&nbsp;en&nbsp;développement&nbsp;logiciel</p>
                     </div>
                     <div class="presentation-picture">
                         <img src="/img/me.jpg" alt="Sébastien Chappuis">
@@ -42,70 +42,70 @@
         <section>
             <h2 id="projects"><span class="limit-width">Projets</span></h2>
             <article class="limit-width">
-                <h3>Labyrinth Path Solver</h3>
-                <p>Labyrinth Path Solver est un projet conçu lors d'un cours d'algorithme et de structure de données. Ce projet permet de visualiser la génération et la résolution de labyrinthes, le tout à l'aide d'une interface graphique interactive.</p>
-                <p><strong>Technologies utilisées :</strong> HTML, CSS, JavaScript (canvas, contexte 2D)</p>
-                <p>Vous pouvez directement intéragir avec le générateur de labyrinthes ci-dessous :</p>
+                <h3>Labyrinth&nbsp;Path&nbsp;Solver</h3>
+                <p>Labyrinth&nbsp;Path&nbsp;Solver est un&nbsp;projet conçu lors d'un&nbsp;cours d'algorithme et de&nbsp;structure de&nbsp;données. Ce projet permet de&nbsp;visualiser la&nbsp;génération et la&nbsp;résolution de&nbsp;labyrinthes, le&nbsp;tout à&nbsp;l'aide d'une&nbsp;interface graphique interactive.</p>
+                <p><strong>Technologies&nbsp;utilisées :</strong> HTML, CSS, JavaScript (canvas, contexte&nbsp;2D)</p>
+                <p>Vous pouvez directement intéragir avec le&nbsp;générateur de&nbsp;labyrinthes ci-dessous :</p>
 <!-- LPS -->
 <div id="lps">
 <div id="lps-ui">
     <div class="lps-input-header lps-no-top-margin">
-        <label>Configuration de génération</label>
+        <label>Configuration de&nbsp;génération</label>
     </div>
     <div class="lps-input-row">
-        <label for="lps-input-radius">Rayon externe</label>
+        <label for="lps-input-radius">Rayon&nbsp;externe</label>
         <input id="lps-input-radius" type="range" value="20" min="5" max="50">
     </div>
     <div class="lps-input-row">
-        <label for="lps-input-inner-radius">Rayon interne</label>
+        <label for="lps-input-inner-radius">Rayon&nbsp;interne</label>
         <input id="lps-input-inner-radius" type="range" value="30" min="0" max="50">
     </div>
     <div class="lps-input-row">
-        <label for="lps-input-paths-density">Densité des chemins</label>
+        <label for="lps-input-paths-density">Densité des&nbsp;chemins</label>
         <input id="lps-input-paths-density" type="range" value="2" min="0" max="50">
     </div>
     <div class="lps-input-row">
-        <label>Distance parcourue</label>
+        <label>Distance&nbsp;parcourue</label>
         <label id="lps-path-length-traveled">0</label>
     </div>
     <div class="lps-input-row">
-        <label>Solution la plus courte</label>
+        <label>Solution la&nbsp;plus&nbsp;courte</label>
         <label id="lps-shortest-resolve-distance">0</label>
     </div>
     
     <div class="lps-input-row">
-        <button id="lps-button-regenerate" class="btn lps-btn">Générer un autre avec la même configuration</button>
+        <button id="lps-button-regenerate" class="btn lps-btn">Générer un&nbsp;autre avec la&nbsp;même&nbsp;configuration</button>
     </div>
     
     <!-- Animation -->
     <div class="lps-input-header">
-        <label>Configuration de l'animation</label>
+        <label>Configuration de&nbsp;l'animation</label>
     </div>
     
     <div class="lps-input-row">
-        <label for="lps-input-show-solution">Afficher la solution</label>
+        <label for="lps-input-show-solution">Afficher la&nbsp;solution</label>
         <div class="lps-input-wrapper">
             <input id="lps-input-show-solution" class="lps-checkbox" type="checkbox">
         </div>
     </div>
     
     <div class="lps-input-row">
-        <label for="lps-input-preview-type">Type de prévisualisation</label>
+        <label for="lps-input-preview-type">Type de&nbsp;prévisualisation</label>
         <div class="lps-input-wrapper">
             <select id="lps-input-preview-type" class="btn lps-btn lps-select">
-                <option class="lps-option" value="show-progress">Afficher progression</option>
+                <option class="lps-option" value="show-progress">Afficher&nbsp;progression</option>
                 <option class="lps-option" value="instant">Instantanée</option>
             </select>
         </div>
     </div>
     
     <div class="lps-input-row">
-        <label for="input-generation-speed">Vitesse de génération</label>
+        <label for="input-generation-speed">Vitesse de&nbsp;génération</label>
         <!-- max = JS const ANIMATION_SPEED length -->
         <input id="lps-input-generation-speed" type="range" value="7" min="0" max="8">
     </div>
     <div class="lps-input-row">
-        <label for="lps-input-resolve-speed">Vitesse de résolution</label>
+        <label for="lps-input-resolve-speed">Vitesse de&nbsp;résolution</label>
         <!-- max = JS const ANIMATION_SPEED length (removing the index 8 to exclude "instant resolve") -->
         <input id="lps-input-resolve-speed" type="range" value="6" min="0" max="7">
     </div>
@@ -118,13 +118,13 @@
         <label>Export</label>
     </div>
     <div class="lps-input-row">
-        <button id="lps-export-unresolved-png" class="btn lps-btn">Labyrinthe non-résolue en PNG</button>
+        <button id="lps-export-unresolved-png" class="btn lps-btn">Labyrinthe&nbsp;non-résolue en&nbsp;PNG</button>
     </div>
     <div class="lps-input-row">
-        <button id="lps-export-resolved-png" class="btn lps-btn">Labyrinthe résolue en PNG</button>
+        <button id="lps-export-resolved-png" class="btn lps-btn">Labyrinthe&nbsp;résolue en&nbsp;PNG</button>
     </div>
     <div class="lps-input-row">
-        <button id="lps-export-unfinished-png" class="btn lps-btn">État actuel du labyrinthe en PNG</button>
+        <button id="lps-export-unfinished-png" class="btn lps-btn">État&nbsp;actuel du&nbsp;labyrinthe en&nbsp;PNG</button>
     </div>
 </div>
 <div id="lps-canvas-wrapper">
@@ -134,95 +134,95 @@
 <!-- LPS_END -->
             </article>
             <article class="limit-width">
-                <h3>Projet de Bachelor</h3>
-                <p>Le projet de bachelor, réalisé individuellement, consiste en deux parties distinctes :</p>
+                <h3>Projet de&nbsp;Bachelor</h3>
+                <p>Le&nbsp;projet de&nbsp;bachelor, réalisé individuellement, consiste en&nbsp;deux&nbsp;parties distinctes :</p>
                 <ul class="list">
-                    <li>Utilitaire permettant la génération de labyrinthes</li>
-                    <li>Jeu en 3D permettant de parcourir des labyrinthes generés</li>
+                    <li>Utilitaire permettant la&nbsp;génération de&nbsp;labyrinthes</li>
+                    <li>Jeu en&nbsp;3D permettant de&nbsp;parcourir des&nbsp;labyrinthes générés</li>
                 </ul>
-                <p>L'utilitaire, inspiré du projet <em>Labyrinth Path Solver</em> décrit ci-dessus, permet de générer et de visualiser des labyrinthes composés de zones isolées appelées <em>clusters</em> (chaque cluster est représenté par une couleur distincte).</p>
-                <p>Les clusters sont ensuite reliés entre eux par des téléporteurs de manière à ce que chaque cluster soit accessible (chaque paire de téléporteurs est représentée par une lettre).</p>
-                <p>Un labyrinthe est composé de multiples salles, chaque salle ayant une difficulté qui y est associée (représenté par un nombre de 0 à 100), plus la salle est proche de l'arrivée, plus sa difficulté est élevée.</p>
-                <p>Les labyrinthes générés peuvent être enregistrés en tant que fichiers JSON. Un algorithme permet de déterminer le niveau de difficulté global d'un labyrinthe.</p>
+                <p>L'utilitaire, inspiré du&nbsp;projet <em>Labyrinth&nbsp;Path&nbsp;Solver</em> décrit ci-dessus, permet de&nbsp;générer et de&nbsp;visualiser des&nbsp;labyrinthes composés de&nbsp;zones isolées appelées <em>clusters</em> (chaque&nbsp;cluster est&nbsp;représenté par&nbsp;une&nbsp;couleur distincte).</p>
+                <p>Les&nbsp;clusters sont ensuite reliés entre&nbsp;eux par&nbsp;des&nbsp;téléporteurs de&nbsp;manière à&nbsp;ce&nbsp;que chaque&nbsp;cluster soit&nbsp;accessible (chaque&nbsp;paire de&nbsp;téléporteurs est&nbsp;représentée par&nbsp;une&nbsp;lettre).</p>
+                <p>Un&nbsp;labyrinthe est composé de&nbsp;multiples salles, chaque salle ayant une&nbsp;difficulté qui&nbsp;y&nbsp;est associée (représenté par&nbsp;un&nbsp;nombre de&nbsp;0&nbsp;à&nbsp;100), plus la&nbsp;salle est proche de&nbsp;l'arrivée, plus sa difficulté est élevée.</p>
+                <p>Les&nbsp;labyrinthes générés peuvent être enregistrés en&nbsp;tant&nbsp;que&nbsp;fichiers JSON. Un&nbsp;algorithme permet de&nbsp;déterminer le&nbsp;niveau de&nbsp;difficulté global d'un&nbsp;labyrinthe.</p>
                 <div class="screenshot-row">
                     <div class="screenshot"><img alt="Screenshot 1" src="/img/bachelor-util1.png"></div>
                     <div class="screenshot"><img alt="Screenshot 2" src="/img/bachelor-util2.png"></div>
                     <div class="screenshot"><img alt="Screenshot 3" src="/img/bachelor-util3.png"></div>
                 </div>
-                <p>Le jeu en 3D permet de parcourir une succession de labyrinthes de difficulté croissante.</p>
-                <p>De multiples salles composées d'obstacles doivent être parcourues, les obstacles variant en fonction de la difficulté de la salle.</p>
-                <p>Le joueur peut en tout temps voir la carte du labyrinthe, permettant de connaitre sa localisation actuelles et l'emplacement des téléporteurs. Cependant, le joueur ne sait pas où mènent les téléporteurs. Il doit donc identifier la difficulté de la salle pour savoir s'il se rapproche ou s'éloigne de l'arrivée.</p>
-                <p>Le joueur dispose de trois points de vie. S'il tombe dans le vide, il perd une vie et réapparait à l'entrée de la salle actuelle. S'il perd tous ses points de vie, c'est game over ; le nombre de labyrinthes parcourus représente le score du joueur.</p>
+                <p>Le&nbsp;jeu en&nbsp;3D permet de&nbsp;parcourir une&nbsp;succession de&nbsp;labyrinthes de&nbsp;difficulté croissante.</p>
+                <p>De&nbsp;multiples salles composées d'obstacles doivent être parcourues, les&nbsp;obstacles variant en&nbsp;fonction de&nbsp;la&nbsp;difficulté de&nbsp;la&nbsp;salle.</p>
+                <p>Le&nbsp;joueur peut en&nbsp;tout&nbsp;temps voir la&nbsp;carte du&nbsp;labyrinthe, permettant de&nbsp;connaitre sa&nbsp;localisation actuelle et&nbsp;l'emplacement des&nbsp;téléporteurs. Cependant, le&nbsp;joueur ne sait pas où mènent les&nbsp;téléporteurs. Il doit donc identifier la&nbsp;difficulté de&nbsp;la&nbsp;salle pour&nbsp;savoir s'il se rapproche ou s'éloigne de&nbsp;l'arrivée.</p>
+                <p>Le&nbsp;joueur dispose de&nbsp;trois&nbsp;points de&nbsp;vie. S'il tombe dans le&nbsp;vide, il perd une&nbsp;vie et&nbsp;réapparait à&nbsp;l'entrée de&nbsp;la&nbsp;salle actuelle. S'il perd tous ses&nbsp;points de&nbsp;vie, c'est&nbsp;game&nbsp;over ; le&nbsp;nombre de&nbsp;labyrinthes parcourus représente le&nbsp;score du&nbsp;joueur.</p>
                 <div class="screenshot-row">
                     <div class="screenshot"><img alt="Screenshot 4" src="/img/bachelor-game1.png"></div>
                     <div class="screenshot"><img alt="Screenshot 5" src="/img/bachelor-game2.png"></div>
                 </div>
-                <p><strong>Technologies utilisées pour l'utilitaire :</strong> Python, Tkinter (interface graphique), JSON</p>
-                <p><strong>Technologies utilisées pour le jeu en 3D :</strong> Godot (moteur de jeu), Blender (modélisation 3D), JSON</p>
+                <p><strong>Technologies&nbsp;utilisées pour&nbsp;l'utilitaire :</strong> Python, Tkinter (interface&nbsp;graphique), JSON</p>
+                <p><strong>Technologies&nbsp;utilisées pour&nbsp;le&nbsp;jeu en&nbsp;3D :</strong> Godot (moteur de&nbsp;jeu), Blender (modélisation&nbsp;3D), JSON</p>
             </article>
             <article class="limit-width">
                 <h3>PixelARC</h3>
-                <p>PixelARC est un langage de programmation conçu pour permettre la génération d'images dans le style "pixel&nbsp;art".</p>
-                <p>Le projet est composé de deux grandes parties :</p>
+                <p>PixelARC est un&nbsp;langage de&nbsp;programmation conçu pour&nbsp;permettre la&nbsp;génération d'images dans le&nbsp;style "pixel&nbsp;art".</p>
+                <p>Le&nbsp;projet est composé de&nbsp;deux&nbsp;grandes&nbsp;parties :</p>
                 <ul class="list">
-                    <li>Le compilateur (convertit le code PixelARC en bytecode)</li>
-                    <li>L'interpréteur (interprète le bytecode et génere l'image finale)</li>
+                    <li>Le&nbsp;compilateur (convertit le&nbsp;code PixelARC en&nbsp;bytecode)</li>
+                    <li>L'interpréteur (interprète le&nbsp;bytecode et&nbsp;génère l'image&nbsp;finale)</li>
                 </ul>
-                <p>Le langage implémente certains concepts tels que les variables, les conditions, les boucles, les fonctions, etc.<br>Des fonctions "natives" sont aussi implémentées, telles que des fonctions trigonométriques et des fonctions permettant de dessiner sur l'image final.</p>
-                <p><strong>Technologies utilisées :</strong> Python, Numpy, Pillow, Ply, PyDot</p>
+                <p>Le&nbsp;langage implémente certains concepts tels que les&nbsp;variables, les&nbsp;conditions, les&nbsp;boucles, les&nbsp;fonctions, etc.<br>Des&nbsp;fonctions "natives" sont aussi implémentées, telles que des&nbsp;fonctions trigonométriques et&nbsp;des&nbsp;fonctions permettant de&nbsp;dessiner sur&nbsp;l'image finale.</p>
+                <p><strong>Technologies&nbsp;utilisées :</strong> Python, Numpy, Pillow, Ply, PyDot</p>
             </article>
             <article class="limit-width">
                 <h3>Arquizz</h3>
-                <p>Arquizz est un site web inspiré de <i>Kahoot!</i> permettant de créer et de jouer à des quiz en ligne en affrontant d'autres utilisateurs en temps réel. Le projet implémente les fonctionnalités suivantes :</p>
+                <p>Arquizz est un&nbsp;site&nbsp;web inspiré de&nbsp;<i>Kahoot!</i> permettant de&nbsp;créer et de&nbsp;jouer à&nbsp;des&nbsp;quiz en&nbsp;ligne en&nbsp;affrontant d'autres utilisateurs en&nbsp;temps réel. Le&nbsp;projet implémente les&nbsp;fonctionnalités suivantes :</p>
                 <ul class="list">
                     <li>Gestion d'utilisateurs (inscription, connexion, profil)</li>
-                    <li>Gestion des quiz (création, modification, suppression)</li>
-                    <li>Gestion des questions et des propositions</li>
-                    <li>Système de salons (partie publique pouvant être rejointe par n'importe qui via un code)</li>
-                    <li>Système de points et de classement pour une partie</li>
-                    <li>Système de temporisation pour une partie (limite de temps par question)</li>
+                    <li>Gestion des&nbsp;quiz (création, modification, suppression)</li>
+                    <li>Gestion des&nbsp;questions et&nbsp;des&nbsp;propositions</li>
+                    <li>Système de&nbsp;salons (partie publique pouvant être rejointe par&nbsp;n'importe&nbsp;qui via&nbsp;un&nbsp;code)</li>
+                    <li>Système de&nbsp;points et&nbsp;de&nbsp;classement pour&nbsp;une&nbsp;partie</li>
+                    <li>Système de&nbsp;temporisation pour&nbsp;une&nbsp;partie (limite de&nbsp;temps par&nbsp;question)</li>
                     <li>etc.</li>
                 </ul>
-                <p><strong>Technologies utilisées :</strong> HTML, CSS, JavaScript, PHP, Laravel, MySQL</p>
+                <p><strong>Technologies&nbsp;utilisées :</strong> HTML, CSS, JavaScript, PHP, Laravel, MySQL</p>
             </article>
             <article class="limit-width">
                 <h3>Grafile</h3>
-                <p>Grafile est un logiciel conçu pour automatiser certaines actions sur des fichiers, telles que les renommer, les déplacer, les supprimer, etc. L'interface graphique est sous la forme d'un système de nœuds pouvant être reliés entre eux.</p>
-                <p><strong>Technologies utilisées :</strong> C++, Qt</p>
+                <p>Grafile est un&nbsp;logiciel conçu pour&nbsp;automatiser certaines actions sur des&nbsp;fichiers, telles que les&nbsp;renommer, les&nbsp;déplacer, les&nbsp;supprimer, etc. L'interface graphique est sous la&nbsp;forme d'un&nbsp;système de&nbsp;nœuds pouvant être reliés entre eux.</p>
+                <p><strong>Technologies&nbsp;utilisées :</strong> C++, Qt</p>
             </article>
             <article class="limit-width">
-                <h3>Arrière plan du portfolio</h3>
-                <p>L'arrière plan de ce site une de mes créations conçu spécialement pour ce portfolio. Différentes notions d'OpenGL/WebGL sont implémentées, telles que les vertex shaders, les fragment shaders, les textures, l'upscaling, le post-processing, etc.</p>
-                <p><strong>Technologies utilisées :</strong> HTML, CSS, JavaScript, WebGL</p>
-                <p>Vous pouvez modifier l'arrière-plan à l'aide des boutons ci-dessous :</p>
+                <h3>Arrière&nbsp;plan du&nbsp;portfolio</h3>
+                <p>L'arrière&nbsp;plan de&nbsp;ce&nbsp;site est une&nbsp;de&nbsp;mes&nbsp;créations conçue spécialement pour&nbsp;ce&nbsp;portfolio. Différentes notions d'OpenGL/WebGL sont implémentées, telles que les&nbsp;vertex&nbsp;shaders, les&nbsp;fragment&nbsp;shaders, les&nbsp;textures, l'upscaling, le&nbsp;post-processing, etc.</p>
+                <p><strong>Technologies&nbsp;utilisées :</strong> HTML, CSS, JavaScript, WebGL</p>
+                <p>Vous pouvez modifier l'arrière-plan à&nbsp;l'aide des&nbsp;boutons ci-dessous :</p>
                 <input id="background-theme" type="hidden" value="0">
                 <div id="background-themes" class="btn-list">
-                    <button class="btn selected">Par défaut</button>
+                    <button class="btn selected">Par&nbsp;défaut</button>
                     <button class="btn">Miel</button>
-                    <button class="btn">Confiture aux myrtilles</button>
+                    <button class="btn">Confiture aux&nbsp;myrtilles</button>
                     <button class="btn">Lave</button>
                     <button class="btn">Néon</button>
-                    <button class="btn">Métal rouillé</button>
+                    <button class="btn">Métal&nbsp;rouillé</button>
                 </div>
             </article>
             <article class="limit-width">
-                <h3>... et bien plus !</h3>
-                <p>Durant mes études, j'ai conçu de nombreux autres projets, aussi bien individuellement que en groupe.<br>Seuls quelques projets clés sont déscrits sur ce portfolio.</p>
+                <h3>... et&nbsp;bien&nbsp;plus !</h3>
+                <p>Durant mes&nbsp;études, j'ai conçu de&nbsp;nombreux&nbsp;autres projets, aussi bien individuellement que&nbsp;en&nbsp;groupe.<br>Seuls quelques&nbsp;projets clés sont&nbsp;décrits sur&nbsp;ce&nbsp;portfolio.</p>
             </article>
         </section>
         <section>
             <h2 id="contact"><span class="limit-width">Contact</span></h2>
             <article class="limit-width">
-                <p>Vous pouvez me contacter par e-mail ou sur LinkedIn.</p>
+                <p>Vous pouvez me contacter par&nbsp;e-mail ou&nbsp;sur&nbsp;LinkedIn.</p>
                 <ul class="contact-list">
                     <li>
                         <a id="contact-email" class="btn" href="#">
-                            <span class="icon-prefix i-email">M'envoyer un e-mail</span>
+                            <span class="icon-prefix i-email">M'envoyer un&nbsp;e-mail</span>
                         </a>
                     </li>
                     <li>
                         <a class="btn" href="https://www.linkedin.com/in/sebastien-chappuis/">
-                            <span class="icon-prefix i-linkedin">Me trouver sur LinkedIn</span>
+                            <span class="icon-prefix i-linkedin">Me trouver sur&nbsp;LinkedIn</span>
                         </a>
                     </li>
                 </ul>
