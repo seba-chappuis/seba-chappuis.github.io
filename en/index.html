@@ -30,82 +30,82 @@
                 <div class="presentation-wrapper">
                     <div class="presentation-text">
                         <p class="presentation-name">Sébastien Chappuis</p>
-                        <p class="presentation-role">Software&nbsp;Engineer</p>
+                        <p class="presentation-role">Software Engineer</p>
                     </div>
                     <div class="presentation-picture">
                         <img src="/img/me.jpg" alt="Sébastien Chappuis">
                     </div>
                 </div>
-                <p>I like everything that is linked to&nbsp;programming, such as the&nbsp;creation of&nbsp;websites, applications (PC&nbsp;and&nbsp;mobiles), automation&nbsp;scripts, video&nbsp;games, embedded&nbsp;systems software, etc.</p>
+                <p>I&nbsp;like everything that&nbsp;is&nbsp;linked to&nbsp;programming, such as&nbsp;the&nbsp;creation of&nbsp;websites, applications (PC&nbsp;and&nbsp;mobiles), automation scripts, video games, embedded systems software, etc.</p>
             </div>
         </section>
         <section>
             <h2 id="projects"><span class="limit-width">Projects</span></h2>
             <article class="limit-width">
-                <h3>Labyrinth&nbsp;Path&nbsp;Solver</h3>
-                <p>Labyrinth&nbsp;Path&nbsp;Solver is a&nbsp;project conceived during an algorithm and data&nbsp;structure course. This project allows you to&nbsp;visualize the&nbsp;generation and resolution of&nbsp;mazes, using an interactive graphical interface.</p>
-                <p><strong>Technologies&nbsp;used:</strong> HTML, CSS, JavaScript (canvas, context&nbsp;2D)</p>
-                <p>You can directly interact with the&nbsp;maze generator below:</p>
+                <h3>Labyrinth Path Solver</h3>
+                <p>Labyrinth Path Solver is&nbsp;a&nbsp;project conceived during&nbsp;an&nbsp;algorithm and&nbsp;data structure course. This&nbsp;project allows you&nbsp;to&nbsp;visualize the&nbsp;generation and&nbsp;resolution of&nbsp;mazes, using an&nbsp;interactive graphical interface.</p>
+                <p><strong>Technologies used:</strong> HTML, CSS, JavaScript (canvas, context&nbsp;2D)</p>
+                <p>You&nbsp;can&nbsp;directly interact with&nbsp;the&nbsp;maze generator below:</p>
 <!-- LPS -->
 <div id="lps">
 <div id="lps-ui">
     <div class="lps-input-header lps-no-top-margin">
-        <label>Generation&nbsp;configuration</label>
+        <label>Generation configuration</label>
     </div>
     <div class="lps-input-row">
-        <label for="lps-input-radius">Outer&nbsp;radius</label>
+        <label for="lps-input-radius">Outer radius</label>
         <input id="lps-input-radius" type="range" value="20" min="5" max="50">
     </div>
     <div class="lps-input-row">
-        <label for="lps-input-inner-radius">Inner&nbsp;radius</label>
+        <label for="lps-input-inner-radius">Inner radius</label>
         <input id="lps-input-inner-radius" type="range" value="30" min="0" max="50">
     </div>
     <div class="lps-input-row">
-        <label for="lps-input-paths-density">Paths&nbsp;density</label>
+        <label for="lps-input-paths-density">Paths density</label>
         <input id="lps-input-paths-density" type="range" value="2" min="0" max="50">
     </div>
     <div class="lps-input-row">
-        <label>Traveled&nbsp;distance</label>
+        <label>Traveled distance</label>
         <label id="lps-path-length-traveled">0</label>
     </div>
     <div class="lps-input-row">
-        <label>Shortest&nbsp;solution</label>
+        <label>Shortest solution</label>
         <label id="lps-shortest-resolve-distance">0</label>
     </div>
     
     <div class="lps-input-row">
-        <button id="lps-button-regenerate" class="btn lps-btn">Generate another with the&nbsp;same configuration</button>
+        <button id="lps-button-regenerate" class="btn lps-btn">Generate another with&nbsp;the&nbsp;same configuration</button>
     </div>
     
     <!-- Animation -->
     <div class="lps-input-header">
-        <label>Animation&nbsp;configuration</label>
+        <label>Animation configuration</label>
     </div>
     
     <div class="lps-input-row">
-        <label for="lps-input-show-solution">Show&nbsp;solution</label>
+        <label for="lps-input-show-solution">Show solution</label>
         <div class="lps-input-wrapper">
             <input id="lps-input-show-solution" class="lps-checkbox" type="checkbox">
         </div>
     </div>
     
     <div class="lps-input-row">
-        <label for="lps-input-preview-type">Preview&nbsp;type</label>
+        <label for="lps-input-preview-type">Preview type</label>
         <div class="lps-input-wrapper">
             <select id="lps-input-preview-type" class="btn lps-btn lps-select">
-                <option class="lps-option" value="show-progress">Show&nbsp;progress</option>
+                <option class="lps-option" value="show-progress">Show progress</option>
                 <option class="lps-option" value="instant">Instant</option>
             </select>
         </div>
     </div>
     
     <div class="lps-input-row">
-        <label for="input-generation-speed">Generation&nbsp;speed</label>
+        <label for="input-generation-speed">Generation speed</label>
         <!-- max = JS const ANIMATION_SPEED length -->
         <input id="lps-input-generation-speed" type="range" value="7" min="0" max="8">
     </div>
     <div class="lps-input-row">
-        <label for="lps-input-resolve-speed">Resolve&nbsp;speed</label>
+        <label for="lps-input-resolve-speed">Resolve speed</label>
         <!-- max = JS const ANIMATION_SPEED length (removing the index 8 to exclude "instant resolve") -->
         <input id="lps-input-resolve-speed" type="range" value="6" min="0" max="7">
     </div>
@@ -118,13 +118,13 @@
         <label>Export</label>
     </div>
     <div class="lps-input-row">
-        <button id="lps-export-unresolved-png" class="btn lps-btn">Unresolved&nbsp;maze to&nbsp;PNG</button>
+        <button id="lps-export-unresolved-png" class="btn lps-btn">Unresolved maze to&nbsp;PNG</button>
     </div>
     <div class="lps-input-row">
-        <button id="lps-export-resolved-png" class="btn lps-btn">Resolved&nbsp;maze to&nbsp;PNG</button>
+        <button id="lps-export-resolved-png" class="btn lps-btn">Resolved maze to&nbsp;PNG</button>
     </div>
     <div class="lps-input-row">
-        <button id="lps-export-unfinished-png" class="btn lps-btn">Current&nbsp;state of&nbsp;the&nbsp;maze to&nbsp;PNG</button>
+        <button id="lps-export-unfinished-png" class="btn lps-btn">Current state of&nbsp;the&nbsp;maze to&nbsp;PNG</button>
     </div>
 </div>
 <div id="lps-canvas-wrapper">
@@ -134,95 +134,95 @@
 <!-- LPS_END -->
             </article>
             <article class="limit-width">
-                <h3>Bachelor&nbsp;project</h3>
-                <p>The&nbsp;bachelor's project, completed individually, consists of&nbsp;two&nbsp;distinct parts:</p>
+                <h3>Bachelor project</h3>
+                <p>The&nbsp;bachelor's project, completed individually, consists of&nbsp;two distinct parts:</p>
                 <ul class="list">
                     <li>Utility for&nbsp;generating mazes</li>
                     <li>3D&nbsp;game for&nbsp;navigating generated mazes</li>
                 </ul>
-                <p>The&nbsp;utility, inspired by&nbsp;the&nbsp;<em>Labyrinth&nbsp;Path&nbsp;Solver</em> project described above, allows you to&nbsp;generate and visualize mazes composed of&nbsp;isolated areas called <em>clusters</em> (each&nbsp;cluster is&nbsp;represented by&nbsp;a&nbsp;distinct color).</p>
-                <p>The&nbsp;clusters are then connected by&nbsp;teleporters so&nbsp;that each&nbsp;cluster is&nbsp;accessible (each&nbsp;pair of&nbsp;teleporters is&nbsp;represented by&nbsp;a&nbsp;letter).</p>
-                <p>A&nbsp;maze is composed of&nbsp;multiple rooms, each with an associated difficulty (represented by&nbsp;a&nbsp;number from&nbsp;0&nbsp;to&nbsp;100). The&nbsp;closer the&nbsp;room is to&nbsp;the&nbsp;finish line, the&nbsp;higher its difficulty.</p>
-                <p>The&nbsp;generated mazes can be saved as&nbsp;JSON&nbsp;files. An algorithm is used to&nbsp;determine the&nbsp;global difficulty level of&nbsp;a&nbsp;maze.</p>
+                <p>The&nbsp;utility, inspired by&nbsp;the&nbsp;<em>Labyrinth Path Solver</em> project described above, allows you&nbsp;to&nbsp;generate and&nbsp;visualize mazes composed of&nbsp;isolated areas called <em>clusters</em> (each cluster is&nbsp;represented by&nbsp;a&nbsp;distinct color).</p>
+                <p>The&nbsp;clusters are&nbsp;then&nbsp;connected by&nbsp;teleporters so&nbsp;that&nbsp;each&nbsp;cluster is&nbsp;accessible (each pair of&nbsp;teleporters is&nbsp;represented by&nbsp;a&nbsp;letter).</p>
+                <p>A&nbsp;maze is&nbsp;composed of&nbsp;multiple rooms, each&nbsp;with&nbsp;an&nbsp;associated difficulty (represented by&nbsp;a&nbsp;number from&nbsp;0 to&nbsp;100). The&nbsp;closer the&nbsp;room is&nbsp;to&nbsp;the&nbsp;finish line, the&nbsp;higher its&nbsp;difficulty.</p>
+                <p>The&nbsp;generated mazes can&nbsp;be&nbsp;saved as&nbsp;JSON files. An&nbsp;algorithm is&nbsp;used to&nbsp;determine the&nbsp;global difficulty level of&nbsp;a&nbsp;maze.</p>
                 <div class="screenshot-row">
                     <div class="screenshot"><img alt="Screenshot 1" src="/img/bachelor-util1.png"></div>
                     <div class="screenshot"><img alt="Screenshot 2" src="/img/bachelor-util2.png"></div>
                     <div class="screenshot"><img alt="Screenshot 3" src="/img/bachelor-util3.png"></div>
                 </div>
                 <p>The&nbsp;3D&nbsp;game allows players to&nbsp;explore a&nbsp;series of&nbsp;mazes of&nbsp;increasing difficulty.</p>
-                <p>Multiple rooms composed of&nbsp;obstacles must be navigated, the&nbsp;obstacles varying depending on the&nbsp;room's difficulty.</p>
-                <p>The&nbsp;player can view the&nbsp;maze map at&nbsp;any&nbsp;time, showing their current location and the&nbsp;position of&nbsp;the&nbsp;teleporters. However, the&nbsp;player does not know where the&nbsp;teleporters lead. They must therefore identify the&nbsp;room's difficulty to&nbsp;determine whether they are getting closer or further from the&nbsp;destination.</p>
-                <p>The&nbsp;player has three health&nbsp;points. If they fall into&nbsp;the&nbsp;void, they lose a&nbsp;life and reappear at&nbsp;the&nbsp;entrance to&nbsp;the&nbsp;current room. If they lose all their health&nbsp;points, it's&nbsp;game&nbsp;over; the&nbsp;number of&nbsp;mazes completed represents the&nbsp;player's score.</p>
+                <p>Multiple rooms composed of&nbsp;obstacles must&nbsp;be&nbsp;navigated, the&nbsp;obstacles varying depending on&nbsp;the&nbsp;room's difficulty.</p>
+                <p>The&nbsp;player can&nbsp;view the&nbsp;maze map at&nbsp;any&nbsp;time, showing their&nbsp;current location and&nbsp;the&nbsp;position of&nbsp;the&nbsp;teleporters. However, the&nbsp;player does&nbsp;not know where&nbsp;the&nbsp;teleporters lead. They&nbsp;must&nbsp;therefore identify the&nbsp;room's difficulty to&nbsp;determine whether they&nbsp;are&nbsp;getting closer or&nbsp;further from&nbsp;the&nbsp;destination.</p>
+                <p>The&nbsp;player has&nbsp;three health points. If&nbsp;they&nbsp;fall into&nbsp;the&nbsp;void, they&nbsp;lose a&nbsp;life and&nbsp;reappear at&nbsp;the&nbsp;entrance to&nbsp;the&nbsp;current room. If&nbsp;they&nbsp;lose all&nbsp;their&nbsp;health points, it's game over; the&nbsp;number of&nbsp;mazes completed represents the&nbsp;player's score.</p>
                 <div class="screenshot-row">
                     <div class="screenshot"><img alt="Screenshot 4" src="/img/bachelor-game1.png"></div>
                     <div class="screenshot"><img alt="Screenshot 5" src="/img/bachelor-game2.png"></div>
                 </div>
-                <p><strong>Technologies&nbsp;used for&nbsp;the&nbsp;utility:</strong> Python, Tkinter (graphical&nbsp;interface), JSON</p>
-                <p><strong>Technologies&nbsp;used for&nbsp;the&nbsp;3D&nbsp;game:</strong> Godot (game&nbsp;engine), Blender (3D&nbsp;modeling), JSON</p>
+                <p><strong>Technologies used for&nbsp;the&nbsp;utility:</strong> Python, Tkinter (graphical&nbsp;interface), JSON</p>
+                <p><strong>Technologies used for&nbsp;the&nbsp;3D&nbsp;game:</strong> Godot (game&nbsp;engine), Blender (3D&nbsp;modeling), JSON</p>
             </article>
             <article class="limit-width">
                 <h3>PixelARC</h3>
-                <p>PixelARC is a&nbsp;programming language conceived to&nbsp;allow the&nbsp;generation of&nbsp;images in the&nbsp;"pixel&nbsp;art" style.</p>
-                <p>The&nbsp;project is composed of&nbsp;two&nbsp;major parts:</p>
+                <p>PixelARC is&nbsp;a&nbsp;programming language conceived to&nbsp;allow the&nbsp;generation of&nbsp;images in&nbsp;the&nbsp;"pixel&nbsp;art" style.</p>
+                <p>The&nbsp;project is&nbsp;composed of&nbsp;two major parts:</p>
                 <ul class="list">
-                    <li>The&nbsp;compiler (converts the&nbsp;PixelARC&nbsp;code into&nbsp;bytecode)</li>
-                    <li>The&nbsp;interpreter (interprets the&nbsp;bytecode and generates the&nbsp;final&nbsp;image)</li>
+                    <li>The&nbsp;compiler (converts the&nbsp;PixelARC code into&nbsp;bytecode)</li>
+                    <li>The&nbsp;interpreter (interprets the&nbsp;bytecode and&nbsp;generates the&nbsp;final image)</li>
                 </ul>
-                <p>The&nbsp;language implements some&nbsp;concepts such as variables, conditions, loops, functions, etc.<br>Native functions are also implemented, such as trigonometric functions and functions that allow you to&nbsp;draw on&nbsp;the&nbsp;final image.</p>
-                <p><strong>Technologies&nbsp;used:</strong> Python, Numpy, Pillow, Ply, PyDot</p>
+                <p>The&nbsp;language implements some&nbsp;concepts such as&nbsp;variables, conditions, loops, functions, etc.<br>Native functions are&nbsp;also implemented, such as&nbsp;trigonometric functions and&nbsp;functions that&nbsp;allow you&nbsp;to&nbsp;draw on&nbsp;the&nbsp;final image.</p>
+                <p><strong>Technologies used:</strong> Python, Numpy, Pillow, Ply, PyDot</p>
             </article>
             <article class="limit-width">
                 <h3>Arquizz</h3>
-                <p>Arquizz is a&nbsp;website inspired by&nbsp;<i>Kahoot!</i> that allows you to&nbsp;create and play quizzes online in real-time against other users. The&nbsp;project implements the&nbsp;following features:</p>
+                <p>Arquizz is&nbsp;a&nbsp;website inspired by&nbsp;<i>Kahoot!</i> that&nbsp;allows you&nbsp;to&nbsp;create and&nbsp;play quizzes online in&nbsp;real-time against other users. The&nbsp;project implements the&nbsp;following features:</p>
                 <ul class="list">
-                    <li>User&nbsp;management (registration, login, profile)</li>
-                    <li>Quiz&nbsp;management (creation, modification, deletion)</li>
-                    <li>Question and&nbsp;answer&nbsp;management</li>
-                    <li>Public&nbsp;room&nbsp;system (game that can be joined by&nbsp;anyone using&nbsp;a&nbsp;code)</li>
-                    <li>Points and&nbsp;ranking&nbsp;system for&nbsp;a&nbsp;game</li>
-                    <li>Time&nbsp;system for&nbsp;a&nbsp;game (time&nbsp;limit per&nbsp;question)</li>
+                    <li>User management (registration, login, profile)</li>
+                    <li>Quiz management (creation, modification, deletion)</li>
+                    <li>Question and&nbsp;answer management</li>
+                    <li>Public room system (game that&nbsp;can&nbsp;be&nbsp;joined by&nbsp;anyone using a&nbsp;code)</li>
+                    <li>Points and&nbsp;ranking system for&nbsp;a&nbsp;game</li>
+                    <li>Time system for&nbsp;a&nbsp;game (time limit per&nbsp;question)</li>
                     <li>etc.</li>
                 </ul>
-                <p><strong>Technologies&nbsp;used:</strong> HTML, CSS, JavaScript, PHP, Laravel, MySQL</p>
+                <p><strong>Technologies used:</strong> HTML, CSS, JavaScript, PHP, Laravel, MySQL</p>
             </article>
             <article class="limit-width">
                 <h3>Grafile</h3>
-                <p>Grafile is a&nbsp;software conceived to&nbsp;automate some&nbsp;actions on&nbsp;files, such as renaming, moving, deleting, etc. The&nbsp;interface is in the&nbsp;form of&nbsp;a&nbsp;node&nbsp;system that can be linked together.</p>
-                <p><strong>Technologies&nbsp;used:</strong> C++, Qt</p>
+                <p>Grafile is&nbsp;a&nbsp;software conceived to&nbsp;automate some&nbsp;actions on&nbsp;files, such as&nbsp;renaming, moving, deleting, etc. The&nbsp;interface is&nbsp;in&nbsp;the&nbsp;form of&nbsp;a&nbsp;node system that&nbsp;can&nbsp;be&nbsp;linked together.</p>
+                <p><strong>Technologies used:</strong> C++, Qt</p>
             </article>
             <article class="limit-width">
-                <h3>Portfolio&nbsp;background</h3>
-                <p>The&nbsp;background of&nbsp;this&nbsp;site is one of&nbsp;my creations specifically designed for&nbsp;this&nbsp;portfolio. Different notions of&nbsp;OpenGL/WebGL are implemented, such as vertex&nbsp;shaders, fragment&nbsp;shaders, textures, upscaling, post-processing, etc.</p>
-                <p><strong>Technologies&nbsp;used:</strong> HTML, CSS, JavaScript, WebGL</p>
-                <p>You can modify the&nbsp;background using the&nbsp;buttons below:</p>
+                <h3>Portfolio background</h3>
+                <p>The&nbsp;background of&nbsp;this&nbsp;site is&nbsp;one of&nbsp;my&nbsp;creations specifically designed for&nbsp;this&nbsp;portfolio. Different notions of&nbsp;OpenGL/WebGL are&nbsp;implemented, such as&nbsp;vertex shaders, fragment shaders, textures, upscaling, post-processing, etc.</p>
+                <p><strong>Technologies used:</strong> HTML, CSS, JavaScript, WebGL</p>
+                <p>You&nbsp;can&nbsp;modify the&nbsp;background using the&nbsp;buttons below:</p>
                 <input id="background-theme" type="hidden" value="0">
                 <div id="background-themes" class="btn-list">
                     <button class="btn selected">Default</button>
                     <button class="btn">Honey</button>
-                    <button class="btn">Blueberry&nbsp;jam</button>
+                    <button class="btn">Blueberry jam</button>
                     <button class="btn">Lava</button>
                     <button class="btn">Neon</button>
-                    <button class="btn">Rusty&nbsp;metal</button>
+                    <button class="btn">Rusty metal</button>
                 </div>
             </article>
             <article class="limit-width">
                 <h3>... and&nbsp;much&nbsp;more!</h3>
-                <p>During my studies, I designed many other projects, both individually and in&nbsp;groups.<br>Only a&nbsp;few key projects are described on&nbsp;this&nbsp;portfolio.</p>
+                <p>During&nbsp;my&nbsp;studies, I&nbsp;designed many&nbsp;other projects, both&nbsp;individually and&nbsp;in&nbsp;groups.<br>Only a&nbsp;few&nbsp;key projects are&nbsp;described on&nbsp;this&nbsp;portfolio.</p>
             </article>
         </section>
         <section>
             <h2 id="contact"><span class="limit-width">Contact</span></h2>
             <article class="limit-width">
-                <p>You can contact me by&nbsp;email or on&nbsp;LinkedIn.</p>
+                <p>You&nbsp;can&nbsp;contact me&nbsp;by&nbsp;email or&nbsp;on&nbsp;LinkedIn.</p>
                 <ul class="contact-list">
                     <li>
                         <a id="contact-email" class="btn" href="#">
-                            <span class="icon-prefix i-email">Send me an&nbsp;email</span>
+                            <span class="icon-prefix i-email">Send me&nbsp;an&nbsp;email</span>
                         </a>
                     </li>
                     <li>
                         <a class="btn" href="https://www.linkedin.com/in/sebastien-chappuis/">
-                            <span class="icon-prefix i-linkedin">Find me on&nbsp;LinkedIn</span>
+                            <span class="icon-prefix i-linkedin">Find me&nbsp;on&nbsp;LinkedIn</span>
                         </a>
                     </li>
                 </ul>
