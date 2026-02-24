@@ -101,7 +101,7 @@ awkward_line_start_words = {
 
 
 def insert_nbsp(text, lang):
-    words = re.split(r'( |~~)', text)
+    words = re.split(r"( |~~|'|-)", text)
     words = [w if w != "~~" else "&nbsp;" for w in words]
     if lang not in awkward_line_end_words or lang not in awkward_line_start_words:
         return "".join(words)
